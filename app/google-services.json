@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "532059376873",
+    "project_id": "watertracker-11",
+    "storage_bucket": "watertracker-11.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:532059376873:android:0dce7deeff5cc1bab7f478",
+        "android_client_info": {
+          "package_name": "com.example.watertrackerandroidapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiWONczcopMABmwbY7ooPCXrZE5DqKpKM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

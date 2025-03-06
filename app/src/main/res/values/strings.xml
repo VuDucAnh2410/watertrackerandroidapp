@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Water Tracker</string>
+    <string name="login_title">Đăng nhập</string>
+    <string name="tab_phone">Số điện thoại</string>
+    <string name="tab_email">Email</string>
+    <string name="hint_phone">Nhập số điện thoại</string>
+    <string name="hint_email">Nhập email</string>
+    <string name="hint_password">Nhập mật khẩu</string>
+    <string name="forgot_password">Quên mật khẩu?</string>
+    <string name="register">Đăng ký</string>
+    <string name="no_account">Chưa có tài khoản? Đăng ký</string>
+    <string name="had_account">Đã có tài khoản? Đăng nhập</string>
+</resources>
