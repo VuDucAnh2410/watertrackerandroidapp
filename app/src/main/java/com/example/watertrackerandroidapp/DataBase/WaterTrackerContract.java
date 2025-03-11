@@ -3,46 +3,51 @@ package com.example.watertrackerandroidapp.DataBase;
 import android.provider.BaseColumns;
 
 public final class WaterTrackerContract {
-    // Ngăn việc khởi tạo lớp này
+
     private WaterTrackerContract() {}
 
-    // Bảng ACCOUNT
     public static class AccountEntry implements BaseColumns {
-        public static final String TABLE_NAME = "account";
-        public static final String COLUMN_USER_ID = "user_id";
-        public static final String COLUMN_PHONE_NUMBER = "phone_number";
-        public static final String COLUMN_EMAIL = "email";
-        public static final String COLUMN_PASSWORD = "password";
-        public static final String COLUMN_CREATE_AT = "create_at";
+        public static final String TABLE_NAME = "ACCOUNT";
+        public static final String COLUMN_ACCOUNT_ID = "AccountID";
+        public static final String COLUMN_EMAIL = "Email";
+        public static final String COLUMN_PHONE = "Phone";
+        public static final String COLUMN_PASSWORD = "Password";
+        public static final String COLUMN_TYPE = "Type";
+        public static final String COLUMN_ACTIVE = "Active";
+        public static final String COLUMN_CREATED_DATE = "CreatedDate";
     }
 
-    // Bảng USERS
     public static class UserEntry implements BaseColumns {
-        public static final String TABLE_NAME = "users";
-        public static final String COLUMN_USER_ID = "user_id";
-        public static final String COLUMN_NAME = "name";
-        public static final String COLUMN_SEX = "sex";
-        public static final String COLUMN_WEIGHT = "weight";
-        public static final String COLUMN_AGE = "age";
-        public static final String COLUMN_SLEEP_TIME = "sleep_time";
-        public static final String COLUMN_WAKE_TIME = "wake_time";
-        public static final String COLUMN_DAILY_GOAL = "daily_goal";
+        public static final String TABLE_NAME = "USERS";
+        public static final String COLUMN_USER_ID = "UserID";
+        public static final String COLUMN_ACCOUNT_ID = "AccountID";
+        public static final String COLUMN_FULL_NAME = "FullName";
+        public static final String COLUMN_GENDER = "Gender";
+        public static final String COLUMN_WEIGHT = "Weight";
+        public static final String COLUMN_AGE = "Age";
+        public static final String COLUMN_DAILY_TARGET = "DailyTarget";
+        public static final String COLUMN_WAKE_TIME = "WakeTime";
+        public static final String COLUMN_SLEEP_TIME = "SleepTime";
     }
 
-    // Bảng WATER_INTAKE
     public static class WaterIntakeEntry implements BaseColumns {
-        public static final String TABLE_NAME = "water_intake";
-        public static final String COLUMN_USER_ID = "user_id";
-        public static final String COLUMN_AMOUNT = "amount";
-        public static final String COLUMN_WATER_TIME = "water_time";
+        public static final String TABLE_NAME = "WATER_INTAKE";
+        public static final String COLUMN_INTAKE_ID = "IntakeID";
+        public static final String COLUMN_USER_ID = "UserID";
+        public static final String COLUMN_AMOUNT = "Amount";
+        public static final String COLUMN_DRINK_TYPE = "DrinkType";
+        public static final String COLUMN_INTAKE_TIME = "IntakeTime";
+        public static final String COLUMN_INTAKE_DATE = "IntakeDate";
     }
 
-    // Bảng Reminders
     public static class ReminderEntry implements BaseColumns {
-        public static final String TABLE_NAME = "reminders";
-        public static final String COLUMN_USER_ID = "user_id";
-        public static final String COLUMN_REMINDER_TIME = "reminder_time";
-        public static final String COLUMN_STATUS = "status";
-        public static final String COLUMN_ALARM_SOUND = "alarm_sound";
+        public static final String TABLE_NAME = "Reminders";
+        public static final String COLUMN_REMINDER_ID = "ReminderID";
+        public static final String COLUMN_USER_ID = "UserID";
+        public static final String COLUMN_REMINDER_TIME = "ReminderTime";
+        public static final String COLUMN_SOUND = "Sound";
+        public static final String COLUMN_ACTIVE = "Active";
+        public static final String COLUMN_DAYS = "Days";
     }
 }
+

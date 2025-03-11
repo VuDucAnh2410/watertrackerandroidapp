@@ -1,6 +1,7 @@
 package com.example.watertrackerandroidapp.LoginFunction;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.watertrackerandroidapp.HomeFunction.MainActivity;
 import com.example.watertrackerandroidapp.R;
+import com.example.watertrackerandroidapp.DataBase.WaterTrackerDao;
+import com.example.watertrackerandroidapp.DataBase.WaterTrackerDbHelper;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -22,11 +25,21 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnLogin;
     private TextView tvRegister, tvForgotPassword;
     private TextInputLayout inputLayoutAccount; // TextInputLayout cho ô nhập tài khoản
+    private WaterTrackerDao waterTrackerDao; // Thêm DAO để tương tác với database
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
+        WaterTrackerDbHelper dbHelper = new WaterTrackerDbHelper(this);
+        dbHelper.ensureDatabaseExists();
+        dbHelper.close();
+
+
+        // Khởi tạo DAO
+        waterTrackerDao = new WaterTrackerDao(this);
 
         // Khởi tạo các view
         etAccount = findViewById(R.id.etAccount);
@@ -110,11 +123,45 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void login(String account, String password) {
-        // Logic để xử lý đăng nhập
-        Toast.makeText(this, "Đăng nhập với tài khoản: " + account, Toast.LENGTH_SHORT).show();
+        // Kiểm tra đăng nhập trong database
+        String accountId = waterTrackerDao.checkLogin(account, password);
 
-        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-        startActivity(intent);
-        finish();
+        if (accountId != null) {
+            // Đăng nhập thành công
+            // Lấy userId từ accountId
+            String userId = waterTrackerDao.getUserIdByAccountId(accountId);
+
+            // Lưu thông tin đăng nhập vào SharedPreferences
+            saveLoginInfo(accountId, userId);
+
+            Toast.makeText(this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+
+            // Chuyển đến màn hình chính
+            Intent intent = new Intent(LoginActivity.this, UserInfoActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            // Đăng nhập thất bại
+            Toast.makeText(this, "Tài khoản hoặc mật khẩu không đúng", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // Lưu thông tin đăng nhập vào SharedPreferences
+    private void saveLoginInfo(String accountId, String userId) {
+        SharedPreferences sharedPreferences = getSharedPreferences("WaterReminderPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("accountId", accountId);
+        editor.putString("userId", userId);
+        editor.putBoolean("isLoggedIn", true);
+        editor.apply();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (waterTrackerDao != null) {
+            waterTrackerDao.close();
+        }
     }
 }
+

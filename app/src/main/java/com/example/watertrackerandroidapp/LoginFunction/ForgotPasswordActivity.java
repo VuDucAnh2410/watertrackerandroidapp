@@ -1,13 +1,16 @@
 package com.example.watertrackerandroidapp.LoginFunction;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.watertrackerandroidapp.R;
+import com.example.watertrackerandroidapp.DataBase.WaterTrackerDao;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textfield.TextInputEditText;
@@ -22,10 +25,17 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     private TextView tvError;
     private TextView tvRegister;
 
+    // Khai báo DAO
+    private WaterTrackerDao waterTrackerDao;
+    private String verificationCode = "123456"; // Mã OTP mặc định (trong thực tế nên tạo ngẫu nhiên)
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
+
+        // Khởi tạo DAO
+        waterTrackerDao = new WaterTrackerDao(this);
 
         // Khởi tạo các view
         tabLayout = findViewById(R.id.tabLayout);
@@ -69,11 +79,28 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (validateInput()) {
-                    // Chuyển đến màn hình xác thực OTP
-                    Intent intent = new Intent(ForgotPasswordActivity.this, VerifyOTPActivity.class);
-                    intent.putExtra("identifier", etAccount.getText().toString().trim());
-                    intent.putExtra("isPhone", tabLayout.getSelectedTabPosition() == 0);
-                    startActivity(intent);
+                    String identifier = etAccount.getText().toString().trim();
+                    boolean isPhone = tabLayout.getSelectedTabPosition() == 0;
+
+                    // Kiểm tra tài khoản tồn tại
+                    String accountId = waterTrackerDao.getAccountIdByIdentifier(identifier);
+
+                    if (accountId != null) {
+                        // Tài khoản tồn tại, lưu thông tin và chuyển đến màn hình xác thực OTP
+                        saveResetInfo(identifier, isPhone);
+
+                        // Trong thực tế, bạn sẽ gửi mã OTP đến email hoặc số điện thoại
+                        // Ở đây, chúng ta giả định mã OTP là "123456"
+
+                        // Chuyển đến màn hình xác thực OTP
+                        Intent intent = new Intent(ForgotPasswordActivity.this, VerifyOTPActivity.class);
+                        startActivity(intent);
+                    } else {
+                        // Tài khoản không tồn tại
+                        inputLayoutAccount.setError("Tài khoản không tồn tại");
+                        Toast.makeText(ForgotPasswordActivity.this,
+                                "Tài khoản không tồn tại", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
@@ -97,6 +124,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         }
         etAccount.setText(""); // Xóa nội dung khi chuyển tab
     }
+
     private boolean validateInput() {
         String input = etAccount.getText().toString().trim();
         boolean isPhone = tabLayout.getSelectedTabPosition() == 0;
@@ -120,5 +148,26 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
         inputLayoutAccount.setError(null);
         return true;
+    }
+
+    // Lưu thông tin đặt lại mật khẩu
+    // Lưu thông tin đặt lại mật khẩu
+    private void saveResetInfo(String identifier, boolean isPhone) {
+        SharedPreferences sharedPreferences = getSharedPreferences("WaterReminderPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("resetIdentifier", identifier);
+        editor.putBoolean("resetIsPhone", isPhone);
+        editor.putString("resetOTP", verificationCode); // Trong thực tế, mã OTP nên được tạo ngẫu nhiên
+        editor.putBoolean("isResetting", true);
+        editor.putBoolean("isRegistering", false); // Đảm bảo flag đăng ký bị tắt
+        editor.apply();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (waterTrackerDao != null) {
+            waterTrackerDao.close();
+        }
     }
 }
