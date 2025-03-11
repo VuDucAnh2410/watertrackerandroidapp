@@ -19,6 +19,7 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class PasswordRegistrationActivity extends AppCompatActivity {
 
+    private static final String TAG = "PasswordRegistration";
     private EditText etPassword, etConfirmPassword;
     private Button btnRegister;
     private TextView tvLogin;
@@ -41,7 +42,7 @@ public class PasswordRegistrationActivity extends AppCompatActivity {
             initViews();
             setupListeners();
         } catch (Exception e) {
-            Log.e("PasswordRegistration", "Error in onCreate", e);
+            Log.e(TAG, "Error in onCreate", e);
             Toast.makeText(this, "Lỗi: " + e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
@@ -52,8 +53,14 @@ public class PasswordRegistrationActivity extends AppCompatActivity {
         btnRegister = findViewById(R.id.btnRegister);
         tvLogin = findViewById(R.id.tvLogin);
 
-        // Bỏ qua việc khởi tạo inputLayoutPassword và inputLayoutConfirmPassword
-        // vì chúng không có trong XML
+        // Tìm TextInputLayout nếu có trong layout
+        try {
+            inputLayoutPassword = findViewById(R.id.inputLayoutPassword);
+            inputLayoutConfirmPassword = findViewById(R.id.inputLayoutConfirmPassword);
+        } catch (Exception e) {
+            Log.w(TAG, "TextInputLayout not found in layout", e);
+            // Không làm gì nếu không tìm thấy, sẽ sử dụng EditText.setError() thay thế
+        }
     }
 
     private void setupListeners() {
@@ -79,10 +86,13 @@ public class PasswordRegistrationActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("WaterReminderPrefs", MODE_PRIVATE);
         tempEmail = sharedPreferences.getString("tempEmail", null);
         tempPhone = sharedPreferences.getString("tempPhone", null);
+        boolean isRegistering = sharedPreferences.getBoolean("isRegistering", false);
+
+        Log.d(TAG, "loadRegistrationInfo: tempEmail=" + tempEmail + ", tempPhone=" + tempPhone + ", isRegistering=" + isRegistering);
 
         // Kiểm tra xem có thông tin đăng ký không
-        if (tempEmail == null && tempPhone == null) {
-            Log.d("PasswordRegistrationActivity", "Không có thông tin đăng ký, quay về RegisterActivity");
+        if ((tempEmail == null && tempPhone == null) || !isRegistering) {
+            Log.d(TAG, "Không có thông tin đăng ký hoặc không trong quá trình đăng ký, quay về RegisterActivity");
             Intent intent = new Intent(this, RegisterActivity.class);
             startActivity(intent);
             finish();
@@ -95,68 +105,127 @@ public class PasswordRegistrationActivity extends AppCompatActivity {
 
         // Kiểm tra mật khẩu
         if (password.isEmpty()) {
-            // Thay vì sử dụng inputLayoutPassword.setError(), hãy sử dụng etPassword.setError()
-            etPassword.setError("Vui lòng nhập mật khẩu");
+            setError(etPassword, inputLayoutPassword, "Vui lòng nhập mật khẩu");
             return;
+        } else {
+            clearError(etPassword, inputLayoutPassword);
         }
 
         if (password.length() < 6) {
-            etPassword.setError("Mật khẩu phải có ít nhất 6 ký tự");
+            setError(etPassword, inputLayoutPassword, "Mật khẩu phải có ít nhất 6 ký tự");
             return;
+        } else {
+            clearError(etPassword, inputLayoutPassword);
         }
 
         if (!password.equals(confirmPassword)) {
-            etConfirmPassword.setError("Mật khẩu xác nhận không khớp");
+            setError(etConfirmPassword, inputLayoutConfirmPassword, "Mật khẩu xác nhận không khớp");
+            return;
+        } else {
+            clearError(etConfirmPassword, inputLayoutConfirmPassword);
+        }
+
+        // Kiểm tra lại thông tin đăng ký
+        if (tempEmail == null && tempPhone == null) {
+            Toast.makeText(this, "Thông tin đăng ký không hợp lệ", Toast.LENGTH_SHORT).show();
+            Log.e(TAG, "Thông tin đăng ký không hợp lệ: tempEmail=" + tempEmail + ", tempPhone=" + tempPhone);
+            return;
+        }
+
+        // Kiểm tra tài khoản đã tồn tại chưa
+        if (waterTrackerDao.isAccountExists(tempEmail, tempPhone)) {
+            Toast.makeText(this, "Tài khoản đã tồn tại", Toast.LENGTH_SHORT).show();
+            Log.e(TAG, "Tài khoản đã tồn tại: tempEmail=" + tempEmail + ", tempPhone=" + tempPhone);
             return;
         }
 
         try {
+            Log.d(TAG, "Bắt đầu tạo tài khoản: tempEmail=" + tempEmail + ", tempPhone=" + tempPhone);
+
             // Tạo tài khoản mới trong database
             String accountId = waterTrackerDao.createAccount(tempEmail, tempPhone, password);
+
+            Log.d(TAG, "Kết quả tạo tài khoản: accountId=" + accountId);
 
             if (accountId != null) {
                 // Lấy userId từ accountId
                 String userId = waterTrackerDao.getUserIdByAccountId(accountId);
 
-                // Lưu thông tin đăng nhập vào SharedPreferences
-                saveLoginInfo(accountId, userId);
+                Log.d(TAG, "Lấy userId từ accountId: userId=" + userId);
 
-                // Xóa thông tin đăng ký tạm thời
-                clearRegistrationInfo();
+                if (userId != null) {
+                    // Lưu thông tin đăng nhập vào SharedPreferences
+                    saveLoginInfo(accountId, userId);
 
-                Toast.makeText(this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
+                    // Xóa thông tin đăng ký tạm thời
+                    clearRegistrationInfo();
 
-                // Chuyển đến màn hình chính
-                Intent intent = new Intent(PasswordRegistrationActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
+                    Toast.makeText(this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
+
+                    // Chuyển đến màn hình login
+                    Intent intent = new Intent(PasswordRegistrationActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    Log.e(TAG, "Không thể lấy userId từ accountId: " + accountId);
+                    Toast.makeText(this, "Đăng ký thất bại: Không thể lấy thông tin người dùng", Toast.LENGTH_SHORT).show();
+                }
             } else {
+                Log.e(TAG, "Tạo tài khoản thất bại");
                 Toast.makeText(this, "Đăng ký thất bại. Vui lòng thử lại", Toast.LENGTH_SHORT).show();
             }
         } catch (Exception e) {
-            Log.e("PasswordRegistration", "Error in registerUser", e);
+            Log.e(TAG, "Lỗi trong quá trình đăng ký", e);
             Toast.makeText(this, "Lỗi: " + e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+    }
+
+    // Helper method để đặt lỗi cho EditText hoặc TextInputLayout
+    private void setError(EditText editText, TextInputLayout inputLayout, String errorMessage) {
+        if (inputLayout != null) {
+            inputLayout.setError(errorMessage);
+        } else {
+            editText.setError(errorMessage);
+        }
+    }
+
+    // Helper method để xóa lỗi
+    private void clearError(EditText editText, TextInputLayout inputLayout) {
+        if (inputLayout != null) {
+            inputLayout.setError(null);
+        } else {
+            editText.setError(null);
         }
     }
 
     // Lưu thông tin đăng nhập
     private void saveLoginInfo(String accountId, String userId) {
-        SharedPreferences sharedPreferences = getSharedPreferences("WaterReminderPrefs", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("accountId", accountId);
-        editor.putString("userId", userId);
-        editor.putBoolean("isLoggedIn", true);
-        editor.apply();
+        try {
+            SharedPreferences sharedPreferences = getSharedPreferences("WaterReminderPrefs", MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("accountId", accountId);
+            editor.putString("userId", userId);
+            editor.putBoolean("isLoggedIn", true);
+            editor.apply();
+            Log.d(TAG, "Đã lưu thông tin đăng nhập: accountId=" + accountId + ", userId=" + userId);
+        } catch (Exception e) {
+            Log.e(TAG, "Lỗi khi lưu thông tin đăng nhập", e);
+        }
     }
 
     // Xóa thông tin đăng ký tạm thời
     private void clearRegistrationInfo() {
-        SharedPreferences sharedPreferences = getSharedPreferences("WaterReminderPrefs", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.remove("tempEmail");
-        editor.remove("tempPhone");
-        editor.remove("isRegistering"); // Xóa flag isRegistering
-        editor.apply();
+        try {
+            SharedPreferences sharedPreferences = getSharedPreferences("WaterReminderPrefs", MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.remove("tempEmail");
+            editor.remove("tempPhone");
+            editor.remove("isRegistering"); // Xóa flag isRegistering
+            editor.apply();
+            Log.d(TAG, "Đã xóa thông tin đăng ký tạm thời");
+        } catch (Exception e) {
+            Log.e(TAG, "Lỗi khi xóa thông tin đăng ký tạm thời", e);
+        }
     }
 
     @Override
