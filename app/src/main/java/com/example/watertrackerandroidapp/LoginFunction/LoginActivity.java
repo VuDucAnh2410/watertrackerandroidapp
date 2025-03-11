@@ -3,6 +3,8 @@ package com.example.watertrackerandroidapp.LoginFunction;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +21,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class LoginActivity extends AppCompatActivity {
+    private static final String TAG = "LoginActivity";
     private EditText etAccount; // Ô nhập tài khoản (số điện thoại hoặc email)
     private EditText etPassword; // Ô nhập mật khẩu
     private TabLayout tabLayout;
@@ -32,11 +35,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
         WaterTrackerDbHelper dbHelper = new WaterTrackerDbHelper(this);
         dbHelper.ensureDatabaseExists();
         dbHelper.close();
-
 
         // Khởi tạo DAO
         waterTrackerDao = new WaterTrackerDao(this);
@@ -66,7 +67,21 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
 
-                login(account, password); // Chỉ gọi hàm đăng nhập nếu không có lỗi
+                // Kiểm tra định dạng tài khoản dựa trên tab đang chọn
+                int selectedTab = tabLayout.getSelectedTabPosition();
+                if (selectedTab == 0) { // Tab Phone
+                    if (!isValidPhoneNumber(account)) {
+                        etAccount.setError("Số điện thoại không hợp lệ");
+                        return;
+                    }
+                } else { // Tab Email
+                    if (!isValidEmail(account)) {
+                        etAccount.setError("Email không hợp lệ");
+                        return;
+                    }
+                }
+
+                login(account, password, selectedTab); // Truyền thêm selectedTab
             }
         });
 
@@ -108,6 +123,31 @@ public class LoginActivity extends AppCompatActivity {
 
         // Cập nhật ô nhập khi khởi tạo
         updateInputLabel(tabLayout.getSelectedTabPosition());
+
+        // Kiểm tra xem người dùng đã đăng nhập chưa
+        checkLoggedInStatus();
+    }
+
+    // Kiểm tra trạng thái đăng nhập
+    private void checkLoggedInStatus() {
+        SharedPreferences sharedPreferences = getSharedPreferences("WaterReminderPrefs", MODE_PRIVATE);
+        boolean isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
+        String userId = sharedPreferences.getString("userId", null);
+
+        if (isLoggedIn && userId != null) {
+            // Người dùng đã đăng nhập, kiểm tra xem đã nhập thông tin cá nhân chưa
+            if (waterTrackerDao.isFirstTimeLogin(userId)) {
+                // Chưa nhập thông tin cá nhân, chuyển đến UserInfoActivity
+                Intent intent = new Intent(this, UserInfoActivity.class);
+                startActivity(intent);
+                finish();
+            } else {
+                // Đã nhập thông tin cá nhân, chuyển đến MainActivity
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        }
     }
 
     // Cập nhật ô nhập dựa trên tab đã chọn
@@ -122,27 +162,60 @@ public class LoginActivity extends AppCompatActivity {
         etAccount.setText(""); // Xóa nội dung khi chuyển tab
     }
 
-    private void login(String account, String password) {
-        // Kiểm tra đăng nhập trong database
-        String accountId = waterTrackerDao.checkLogin(account, password);
+    // Kiểm tra định dạng email
+    private boolean isValidEmail(String email) {
+        return Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
 
-        if (accountId != null) {
-            // Đăng nhập thành công
-            // Lấy userId từ accountId
-            String userId = waterTrackerDao.getUserIdByAccountId(accountId);
+    // Kiểm tra định dạng số điện thoại
+    private boolean isValidPhoneNumber(String phone) {
+        // Số điện thoại Việt Nam: bắt đầu bằng 0, có 10 số
+        return phone.matches("^0\\d{9}$");
+    }
 
-            // Lưu thông tin đăng nhập vào SharedPreferences
-            saveLoginInfo(accountId, userId);
+    private void login(String account, String password, int selectedTab) {
+        try {
+            // Kiểm tra đăng nhập trong database dựa trên loại tài khoản
+            String accountId;
+            if (selectedTab == 0) { // Tab Phone
+                accountId = waterTrackerDao.checkLoginByPhone(account, password);
+            } else { // Tab Email
+                accountId = waterTrackerDao.checkLoginByEmail(account, password);
+            }
 
-            Toast.makeText(this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+            if (accountId != null) {
+                // Đăng nhập thành công
+                // Lấy userId từ accountId
+                String userId = waterTrackerDao.getUserIdByAccountId(accountId);
 
-            // Chuyển đến màn hình chính
-            Intent intent = new Intent(LoginActivity.this, UserInfoActivity.class);
-            startActivity(intent);
-            finish();
-        } else {
-            // Đăng nhập thất bại
-            Toast.makeText(this, "Tài khoản hoặc mật khẩu không đúng", Toast.LENGTH_SHORT).show();
+                if (userId != null) {
+                    // Lưu thông tin đăng nhập vào SharedPreferences
+                    saveLoginInfo(accountId, userId);
+
+                    Toast.makeText(this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+
+                    // Kiểm tra xem người dùng đã nhập thông tin cá nhân chưa
+                    if (waterTrackerDao.isFirstTimeLogin(userId)) {
+                        // Chưa nhập thông tin cá nhân, chuyển đến UserInfoActivity
+                        Intent intent = new Intent(LoginActivity.this, UserInfoActivity.class);
+                        startActivity(intent);
+                    } else {
+                        // Đã nhập thông tin cá nhân, chuyển đến MainActivity
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        startActivity(intent);
+                    }
+                    finish();
+                } else {
+                    Log.e(TAG, "Không thể lấy userId từ accountId: " + accountId);
+                    Toast.makeText(this, "Lỗi: Không thể lấy thông tin người dùng", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                // Đăng nhập thất bại
+                Toast.makeText(this, "Tài khoản hoặc mật khẩu không đúng", Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Lỗi trong quá trình đăng nhập", e);
+            Toast.makeText(this, "Lỗi: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -154,6 +227,7 @@ public class LoginActivity extends AppCompatActivity {
         editor.putString("userId", userId);
         editor.putBoolean("isLoggedIn", true);
         editor.apply();
+        Log.d(TAG, "Đã lưu thông tin đăng nhập: accountId=" + accountId + ", userId=" + userId);
     }
 
     @Override
@@ -164,4 +238,3 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 }
-

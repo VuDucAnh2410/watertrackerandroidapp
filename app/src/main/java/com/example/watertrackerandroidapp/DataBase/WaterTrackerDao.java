@@ -64,6 +64,80 @@ public class WaterTrackerDao {
     }
 
     /**
+     * Kiểm tra đăng nhập bằng email
+     * @param email Email
+     * @param password Mật khẩu
+     * @return AccountID nếu đăng nhập thành công, null nếu thất bại
+     */
+    public String checkLoginByEmail(String email, String password) {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String accountId = null;
+
+        try {
+            String selection = AccountEntry.COLUMN_EMAIL + " = ? AND " +
+                    AccountEntry.COLUMN_PASSWORD + " = ? AND " +
+                    AccountEntry.COLUMN_ACTIVE + " = 1";
+            String[] selectionArgs = {email, password};
+
+            Cursor cursor = db.query(
+                    AccountEntry.TABLE_NAME,
+                    new String[]{AccountEntry.COLUMN_ACCOUNT_ID},
+                    selection,
+                    selectionArgs,
+                    null,
+                    null,
+                    null
+            );
+
+            if (cursor != null && cursor.moveToFirst()) {
+                accountId = cursor.getString(cursor.getColumnIndexOrThrow(AccountEntry.COLUMN_ACCOUNT_ID));
+                cursor.close();
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Error checking login by email: " + e.getMessage());
+        }
+
+        return accountId;
+    }
+
+    /**
+     * Kiểm tra đăng nhập bằng số điện thoại
+     * @param phone Số điện thoại
+     * @param password Mật khẩu
+     * @return AccountID nếu đăng nhập thành công, null nếu thất bại
+     */
+    public String checkLoginByPhone(String phone, String password) {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String accountId = null;
+
+        try {
+            String selection = AccountEntry.COLUMN_PHONE + " = ? AND " +
+                    AccountEntry.COLUMN_PASSWORD + " = ? AND " +
+                    AccountEntry.COLUMN_ACTIVE + " = 1";
+            String[] selectionArgs = {phone, password};
+
+            Cursor cursor = db.query(
+                    AccountEntry.TABLE_NAME,
+                    new String[]{AccountEntry.COLUMN_ACCOUNT_ID},
+                    selection,
+                    selectionArgs,
+                    null,
+                    null,
+                    null
+            );
+
+            if (cursor != null && cursor.moveToFirst()) {
+                accountId = cursor.getString(cursor.getColumnIndexOrThrow(AccountEntry.COLUMN_ACCOUNT_ID));
+                cursor.close();
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Error checking login by phone: " + e.getMessage());
+        }
+
+        return accountId;
+    }
+
+    /**
      * Kiểm tra xem email hoặc số điện thoại đã tồn tại chưa
      * @param email Email cần kiểm tra
      * @param phone Số điện thoại cần kiểm tra
@@ -176,6 +250,18 @@ public class WaterTrackerDao {
         String accountId = null;
 
         try {
+            // Kiểm tra xem email hoặc phone có giá trị không
+            if ((email == null || email.isEmpty()) && (phone == null || phone.isEmpty())) {
+                Log.e(TAG, "Both email and phone are empty");
+                return null;
+            }
+
+            // Kiểm tra tài khoản đã tồn tại chưa
+            if (isAccountExists(email, phone)) {
+                Log.e(TAG, "Account already exists with email: " + email + ", phone: " + phone);
+                return null;
+            }
+
             // Tạo AccountID mới
             String newAccountId = generateNewAccountId();
 
@@ -209,7 +295,14 @@ public class WaterTrackerDao {
 
                 if (userRowId != -1) {
                     accountId = newAccountId;
+                    Log.d(TAG, "Account created successfully: " + accountId + ", userId: " + newUserId);
+                } else {
+                    Log.e(TAG, "Failed to create user record");
+                    // Xóa tài khoản đã tạo vì không thể tạo user
+                    db.delete(AccountEntry.TABLE_NAME, AccountEntry.COLUMN_ACCOUNT_ID + " = ?", new String[]{newAccountId});
                 }
+            } else {
+                Log.e(TAG, "Failed to create account record");
             }
         } catch (SQLiteException e) {
             Log.e(TAG, "Error creating account: " + e.getMessage());
@@ -337,6 +430,7 @@ public class WaterTrackerDao {
      * @param fullName Họ tên đầy đủ
      * @param gender Giới tính
      * @param weight Cân nặng
+     * @param height Chiều cao
      * @param age Tuổi
      * @param dailyTarget Mục tiêu uống nước hàng ngày (ml)
      * @param wakeTime Thời gian thức dậy

@@ -3188,6 +3188,7 @@ id bounceStart
 id btnBack
 id btnConfirm
 id btnLogin
+id btnLogout
 id btnRegister
 id btnResetPassword
 id btnSave

@@ -26,10 +26,10 @@
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            android:layout_marginBottom="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etFullName"
@@ -37,7 +37,9 @@
                 android:layout_height="40dp"
                 android:background="@drawable/rounded_edittext"
                 android:hint="TÊN"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textSize="15dp"
+                android:padding="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Giới tính -->
@@ -91,7 +93,9 @@
                 android:layout_height="40dp"
                 android:background="@drawable/rounded_edittext"
                 android:hint="CÂN NẶNG (KG)"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:textSize="15dp"
+                android:padding="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Chiều cao -->
@@ -107,7 +111,9 @@
                 android:layout_height="40dp"
                 android:background="@drawable/rounded_edittext"
                 android:hint="CHIỀU CAO (M)"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:textSize="15dp"
+                android:padding="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Tuổi -->
@@ -123,7 +129,9 @@
                 android:layout_height="40dp"
                 android:background="@drawable/rounded_edittext"
                 android:hint="TUỔI"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textSize="15dp"
+                android:padding="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Thời gian ngủ -->
