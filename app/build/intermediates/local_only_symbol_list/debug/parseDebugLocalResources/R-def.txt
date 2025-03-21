@@ -1,5 +1,7 @@
 R_DEF: Internal format may change without notice
 local
+array unit_options
+array unit_values
 color black
 color colorAccent
 color colorPrimary
@@ -41,6 +43,7 @@ id inputLayoutConfirmPassword
 id inputLayoutNewPassword
 id inputLayoutOTP
 id inputLayoutPhone
+id settings_container
 id tabLayout
 id tvError
 id tvForgotPassword
@@ -59,6 +62,7 @@ layout activity_reset_success
 layout activity_verify_otp
 layout fragment_email_login
 layout fragment_phone_login
+layout setting_main
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
@@ -75,3 +79,4 @@ string tab_phone
 style Theme.WaterTrackerAndroidApp
 xml backup_rules
 xml data_extraction_rules
+xml setting_preferences
