@@ -51,6 +51,25 @@ public class LoginActivity extends AppCompatActivity {
         tvForgotPassword = findViewById(R.id.tvForgotPassword);
         inputLayoutAccount = findViewById(R.id.inputLayoutAccount); // Khởi tạo TextInputLayout
 
+        // Kiểm tra xem người dùng vừa đăng ký hay không
+        SharedPreferences sharedPreferences = getSharedPreferences("WaterReminderPrefs", MODE_PRIVATE);
+        boolean justRegistered = sharedPreferences.getBoolean("justRegistered", false);
+
+        if (justRegistered) {
+            // Xóa cờ justRegistered
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean("justRegistered", false);
+            editor.apply();
+
+            // Hiển thị thông báo cho người dùng
+            Toast.makeText(this, "Vui lòng đăng nhập với tài khoản vừa đăng ký", Toast.LENGTH_LONG).show();
+
+            // Không kiểm tra đăng nhập tự động
+        } else {
+            // Kiểm tra trạng thái đăng nhập
+            checkLoggedInStatus();
+        }
+
         // Đặt sự kiện cho nút Đăng nhập
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,9 +142,6 @@ public class LoginActivity extends AppCompatActivity {
 
         // Cập nhật ô nhập khi khởi tạo
         updateInputLabel(tabLayout.getSelectedTabPosition());
-
-        // Kiểm tra xem người dùng đã đăng nhập chưa
-        checkLoggedInStatus();
     }
 
     // Kiểm tra trạng thái đăng nhập
@@ -225,7 +241,7 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("accountId", accountId);
         editor.putString("userId", userId);
-        editor.putBoolean("isLoggedIn", true);
+        editor.putBoolean("isLoggedIn", true); // Đặt isLoggedIn = true khi đăng nhập thành công
         editor.apply();
         Log.d(TAG, "Đã lưu thông tin đăng nhập: accountId=" + accountId + ", userId=" + userId);
     }
@@ -238,3 +254,4 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 }
+

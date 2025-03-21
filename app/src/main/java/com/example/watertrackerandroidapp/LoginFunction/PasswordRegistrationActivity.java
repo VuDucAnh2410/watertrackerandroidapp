@@ -156,13 +156,19 @@ public class PasswordRegistrationActivity extends AppCompatActivity {
                 Log.d(TAG, "Lấy userId từ accountId: userId=" + userId);
 
                 if (userId != null) {
-                    // Lưu thông tin đăng nhập vào SharedPreferences
-                    saveLoginInfo(accountId, userId);
+                    // Lưu thông tin tài khoản vào SharedPreferences nhưng KHÔNG đặt isLoggedIn = true
+                    saveAccountInfo(accountId, userId);
 
                     // Xóa thông tin đăng ký tạm thời
                     clearRegistrationInfo();
 
                     Toast.makeText(this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
+
+                    // Đặt cờ justRegistered để LoginActivity biết người dùng vừa đăng ký
+                    SharedPreferences sharedPreferences = getSharedPreferences("WaterReminderPrefs", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putBoolean("justRegistered", true);
+                    editor.apply();
 
                     // Chuyển đến màn hình login
                     Intent intent = new Intent(PasswordRegistrationActivity.this, LoginActivity.class);
@@ -200,18 +206,18 @@ public class PasswordRegistrationActivity extends AppCompatActivity {
         }
     }
 
-    // Lưu thông tin đăng nhập
-    private void saveLoginInfo(String accountId, String userId) {
+    // Lưu thông tin tài khoản nhưng KHÔNG đặt isLoggedIn = true
+    private void saveAccountInfo(String accountId, String userId) {
         try {
             SharedPreferences sharedPreferences = getSharedPreferences("WaterReminderPrefs", MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString("accountId", accountId);
             editor.putString("userId", userId);
-            editor.putBoolean("isLoggedIn", true);
+            // KHÔNG đặt isLoggedIn = true ở đây
             editor.apply();
-            Log.d(TAG, "Đã lưu thông tin đăng nhập: accountId=" + accountId + ", userId=" + userId);
+            Log.d(TAG, "Đã lưu thông tin tài khoản: accountId=" + accountId + ", userId=" + userId);
         } catch (Exception e) {
-            Log.e(TAG, "Lỗi khi lưu thông tin đăng nhập", e);
+            Log.e(TAG, "Lỗi khi lưu thông tin tài khoản", e);
         }
     }
 

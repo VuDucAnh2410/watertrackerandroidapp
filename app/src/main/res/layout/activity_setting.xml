@@ -67,7 +67,7 @@
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@android:drawable/btn_default"/>
+                    android:src="@drawable/ic_back"/>
             </LinearLayout>
 
             <View
@@ -96,7 +96,7 @@
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@android:drawable/ic_menu_more"/>
+                    android:src="@drawable/ic_back"/>
             </LinearLayout>
 
             <View
