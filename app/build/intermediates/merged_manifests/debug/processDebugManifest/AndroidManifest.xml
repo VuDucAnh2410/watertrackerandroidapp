@@ -55,7 +55,9 @@
         <activity
             android:name="com.example.watertrackerandroidapp.LoginFunction.ResetSuccessActivity"
             android:exported="false" />
-
+        <activity
+            android:name="com.example.watertrackerandroidapp.LoginFunction.UserInfoActivity"
+            android:exported="false" />
         <!-- Nếu bạn có các Fragment, không cần khai báo chúng ở đây -->
         <activity android:name="com.example.watertrackerandroidapp.setting.SettingsActivity" />
 

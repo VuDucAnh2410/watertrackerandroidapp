@@ -29,15 +29,22 @@
             android:name=".LoginFunction.PasswordRegistrationActivity"
             android:exported="false" />
 
-        <activity android:name=".LoginFunction.ForgotPasswordActivity" android:exported="false" />
-        <activity android:name=".LoginFunction.VerifyOTPActivity" android:exported="false" />
-        <activity android:name=".LoginFunction.ResetPasswordActivity" android:exported="false" />
-        <activity android:name=".LoginFunction.ResetSuccessActivity" android:exported="false" />
-
-
-
-
-
+        <activity
+            android:name=".LoginFunction.ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginFunction.VerifyOTPActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginFunction.ResetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginFunction.ResetSuccessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginFunction.UserInfoActivity"
+            android:exported="false" />
+        <!-- Nếu bạn có các Fragment, không cần khai báo chúng ở đây -->
 
     </application>
 

@@ -10,4 +10,6 @@
     <color name="linkColor">#42A5F5</color>
     <color name="errorRed">#F44336</color>
     <color name="lightGray">#F5F5F5</color>
+    <color name="darkGray">#757575</color>
+    <color name="yellow">#FFEB3B</color>
 </resources>
