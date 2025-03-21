@@ -67,7 +67,9 @@ public class PasswordRegistrationActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registerUser();
+                Intent intent = new Intent(PasswordRegistrationActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 

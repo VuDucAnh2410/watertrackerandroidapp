@@ -3185,11 +3185,8 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
-<<<<<<< HEAD
 drawable preference_list_divider_material
-=======
 drawable rounded_dialog_background
->>>>>>> bf6fb615455e846edc8790628d29dbf94d08efee
 drawable rounded_edittext
 drawable speech_bubble
 drawable test_level_drawable
@@ -3319,6 +3316,7 @@ id center_vertical
 id chain
 id chain2
 id chains
+id checkBox
 id checkbox
 id checked
 id chronometer
@@ -3407,6 +3405,7 @@ id etWeight
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fabAdd
 id fade
 id fill
 id fill_horizontal
@@ -3474,6 +3473,7 @@ id line1
 id line3
 id linear
 id listMode
+id listViewSounds
 id list_item
 id locale
 id ltr
@@ -3609,6 +3609,7 @@ id rbFemale
 id rbMale
 id rbOther
 id rectangles
+id recyclerView
 id recycler_view
 id report_drawn
 id reverseSawtooth
@@ -3619,11 +3620,8 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
-<<<<<<< HEAD
 id rtl
-=======
 id rvHistory
->>>>>>> bf6fb615455e846edc8790628d29dbf94d08efee
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3649,7 +3647,6 @@ id seekbar_value
 id select_dialog_listview
 id selected
 id selection_type
-id settings_container
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3689,6 +3686,7 @@ id stretch
 id submenuarrow
 id submit_area
 id supportScrollUp
+id switchReminder
 id switchWidget
 id tabLayout
 id tabMode
@@ -3747,8 +3745,10 @@ id tvPercentage
 id tvRegister
 id tvResendOTP
 id tvSelectedAmount
+id tvSoundName
 id tvTarget
 id tvTime
+id tvTitle
 id tvValidationMessage
 id unchecked
 id uniform
@@ -3898,6 +3898,11 @@ layout activity_password_registration
 layout activity_register
 layout activity_reset_password
 layout activity_reset_success
+layout activity_setting
+layout activity_setting_reminder
+layout activity_setting_reminder_item
+layout activity_setting_sound
+layout activity_setting_soundoption
 layout activity_user_info
 layout activity_verify_otp
 layout custom_dialog
@@ -3919,15 +3924,12 @@ layout design_text_input_start_icon
 layout expand_button
 layout fragment_email_login
 layout fragment_phone_login
-<<<<<<< HEAD
-layout image_frame
-layout ime_base_split_test_activity
-layout ime_secondary_split_test_activity
-=======
 layout home_dialog_water_amount
 layout home_dialog_water_tips
 layout home_item_water_history
->>>>>>> bf6fb615455e846edc8790628d29dbf94d08efee
+layout image_frame
+layout ime_base_split_test_activity
+layout ime_secondary_split_test_activity
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -4004,7 +4006,6 @@ layout preference_widget_switch_compat
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
-layout setting_main
 layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -5517,4 +5518,3 @@ styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration
 styleable include constraintSet
 xml backup_rules
 xml data_extraction_rules
-xml setting_preferences

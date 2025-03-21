@@ -48,6 +48,7 @@ id btnRegister
 id btnResetPassword
 id btnSave
 id btnSendOTP
+id checkBox
 id etAccount
 id etAge
 id etConfirmPassword
@@ -65,6 +66,7 @@ id etSleepMinute
 id etWakeHour
 id etWakeMinute
 id etWeight
+id fabAdd
 id headerLayout
 id inputLayoutAccount
 id inputLayoutConfirmPassword
@@ -72,11 +74,9 @@ id inputLayoutNewPassword
 id inputLayoutOTP
 id inputLayoutPassword
 id inputLayoutPhone
-<<<<<<< HEAD
-id settings_container
-=======
 id ivIcon
 id ivTips
+id listViewSounds
 id navHome
 id navProfile
 id navSettings
@@ -88,9 +88,10 @@ id option750ml
 id rbFemale
 id rbMale
 id rbOther
+id recyclerView
 id rgGender
 id rvHistory
->>>>>>> bf6fb615455e846edc8790628d29dbf94d08efee
+id switchReminder
 id tabLayout
 id tvAmount
 id tvConsumed
@@ -102,8 +103,10 @@ id tvPercentage
 id tvRegister
 id tvResendOTP
 id tvSelectedAmount
+id tvSoundName
 id tvTarget
 id tvTime
+id tvTitle
 id tvValidationMessage
 id waterAmountSelector
 id waterProgressView
@@ -114,17 +117,18 @@ layout activity_password_registration
 layout activity_register
 layout activity_reset_password
 layout activity_reset_success
+layout activity_setting
+layout activity_setting_reminder
+layout activity_setting_reminder_item
+layout activity_setting_sound
+layout activity_setting_soundoption
 layout activity_user_info
 layout activity_verify_otp
 layout fragment_email_login
 layout fragment_phone_login
-<<<<<<< HEAD
-layout setting_main
-=======
 layout home_dialog_water_amount
 layout home_dialog_water_tips
 layout home_item_water_history
->>>>>>> bf6fb615455e846edc8790628d29dbf94d08efee
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
@@ -141,4 +145,3 @@ string tab_phone
 style Theme.WaterTrackerAndroidApp
 xml backup_rules
 xml data_extraction_rules
-xml setting_preferences
