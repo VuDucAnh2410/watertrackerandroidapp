@@ -4,12 +4,14 @@
     <color name="colorAccent">#42A5F5</color>
     <color name="colorPrimary">#42A5F5</color>
     <color name="colorPrimaryDark">#1976D2</color>
+    <color name="darkGray">#757575</color>
     <color name="errorRed">#F44336</color>
     <color name="lightBlue">#42A5F5</color>
     <color name="lightGray">#F5F5F5</color>
     <color name="linkColor">#42A5F5</color>
     <color name="textHint">#9E9E9E</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#FFEB3B</color>
     <string name="app_name">Water Tracker</string>
     <string name="forgot_password">Quên mật khẩu?</string>
     <string name="had_account">Đã có tài khoản? Đăng nhập</string>
