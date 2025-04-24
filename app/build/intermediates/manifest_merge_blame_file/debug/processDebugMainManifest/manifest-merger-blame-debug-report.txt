@@ -20,169 +20,164 @@
 15-->[androidx.core:core:1.15.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\c7ceb4e7bee9f10418c0e600beeaa4dc\transformed\core-1.15.0\AndroidManifest.xml:26:22-94
 16
 17    <application
-17-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:4:5-49:19
+17-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:3:5-54:19
 18        android:allowBackup="true"
-18-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:5:9-35
+18-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:4:9-35
 19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 19-->[androidx.core:core:1.15.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\c7ceb4e7bee9f10418c0e600beeaa4dc\transformed\core-1.15.0\AndroidManifest.xml:28:18-86
 20        android:debuggable="true"
 21        android:extractNativeLibs="false"
 22        android:icon="@mipmap/ic_launcher"
-22-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:6:9-43
+22-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:5:9-43
 23        android:label="@string/app_name"
-23-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:7:9-41
+23-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:6:9-41
 24        android:roundIcon="@mipmap/ic_launcher_round"
-24-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:8:9-54
+24-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:7:9-54
 25        android:supportsRtl="true"
-25-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:9:9-35
+25-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:8:9-35
 26        android:testOnly="true"
 27        android:theme="@style/Theme.WaterTrackerAndroidApp" >
-27-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:10:9-60
+27-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:9:9-60
 28        <activity
-28-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:11:9-18:20
-29            android:name="com.example.watertrackerandroidapp.LoginFunction.LoginActivity"
-29-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:12:13-56
+28-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:10:9-17:20
+29            android:name="com.example.watertrackerandroidapp.SettingFunction.SettingActivity"
+29-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:11:13-60
 30            android:exported="true" >
-30-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:13:13-36
+30-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:12:13-36
 31            <intent-filter>
-31-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:14:13-17:29
+31-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:13:13-16:29
 32                <action android:name="android.intent.action.MAIN" />
-32-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:15:17-69
-32-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:15:25-66
+32-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:14:17-69
+32-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:14:25-66
 33
 34                <category android:name="android.intent.category.LAUNCHER" />
-34-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:16:17-77
-34-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:16:27-74
+34-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:15:17-77
+34-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:15:27-74
 35            </intent-filter>
 36        </activity>
 37        <activity
-37-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:20:9-22:40
-38            android:name="com.example.watertrackerandroidapp.HomeFunction.MainActivity"
-38-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:21:13-54
+37-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:18:9-20:40
+38            android:name="com.example.watertrackerandroidapp.SettingFunction.Activity.SoundSelectionActivity"
+38-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:19:13-76
 39            android:exported="false" />
-39-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:22:13-37
+39-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:20:13-37
 40        <activity
-40-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:24:9-26:40
-41            android:name="com.example.watertrackerandroidapp.LoginFunction.RegisterActivity"
-41-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:25:13-59
+40-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:21:9-23:40
+41            android:name="com.example.watertrackerandroidapp.SettingFunction.Activity.ScheduleActivity"
+41-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:22:13-70
 42            android:exported="false" />
-42-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:26:13-37
-43        <activity
-43-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:28:9-30:40
-44            android:name="com.example.watertrackerandroidapp.LoginFunction.PasswordRegistrationActivity"
-44-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:29:13-71
-45            android:exported="false" />
-45-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:30:13-37
-46        <activity
-46-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:32:9-34:40
-47            android:name="com.example.watertrackerandroidapp.LoginFunction.ForgotPasswordActivity"
-47-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:33:13-65
-48            android:exported="false" />
-48-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:34:13-37
-49        <activity
-49-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:35:9-37:40
-50            android:name="com.example.watertrackerandroidapp.LoginFunction.VerifyOTPActivity"
-50-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:36:13-60
-51            android:exported="false" />
-51-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:37:13-37
-52        <activity
-52-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:38:9-40:40
-53            android:name="com.example.watertrackerandroidapp.LoginFunction.ResetPasswordActivity"
-53-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:39:13-64
-54            android:exported="false" />
-54-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:40:13-37
-55        <activity
-55-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:41:9-43:40
-56            android:name="com.example.watertrackerandroidapp.LoginFunction.ResetSuccessActivity"
-56-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:42:13-63
-57            android:exported="false" />
-57-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:43:13-37
-58        <activity
-58-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:44:9-46:40
-59            android:name="com.example.watertrackerandroidapp.LoginFunction.UserInfoActivity"
-59-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:45:13-59
-60            android:exported="false" />
-60-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:46:13-37
-61        <!-- Nếu bạn có các Fragment, không cần khai báo chúng ở đây -->
-62
-63        <provider
-63-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\af72ac5d767758a5ce4520f1c86d766f\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-64            android:name="androidx.startup.InitializationProvider"
-64-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\af72ac5d767758a5ce4520f1c86d766f\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-65            android:authorities="com.example.watertrackerandroidapp.androidx-startup"
-65-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\af72ac5d767758a5ce4520f1c86d766f\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-66            android:exported="false" >
-66-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\af72ac5d767758a5ce4520f1c86d766f\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-67            <meta-data
-67-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\af72ac5d767758a5ce4520f1c86d766f\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-68                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-68-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\af72ac5d767758a5ce4520f1c86d766f\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-69                android:value="androidx.startup" />
-69-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\af72ac5d767758a5ce4520f1c86d766f\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-70            <meta-data
-70-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Dell\.gradle\caches\8.10.2\transforms\84640b59c54dd92f8370174ec37ab62e\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
-71                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-71-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Dell\.gradle\caches\8.10.2\transforms\84640b59c54dd92f8370174ec37ab62e\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
-72                android:value="androidx.startup" />
-72-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Dell\.gradle\caches\8.10.2\transforms\84640b59c54dd92f8370174ec37ab62e\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
-73            <meta-data
-73-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
-74                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-74-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
-75                android:value="androidx.startup" />
-75-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
-76        </provider>
-77
-78        <uses-library
-78-->[androidx.window:window:1.0.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\a1bb1761ea457a624e096381ec28624d\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
-79            android:name="androidx.window.extensions"
-79-->[androidx.window:window:1.0.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\a1bb1761ea457a624e096381ec28624d\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
-80            android:required="false" />
-80-->[androidx.window:window:1.0.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\a1bb1761ea457a624e096381ec28624d\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
-81        <uses-library
-81-->[androidx.window:window:1.0.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\a1bb1761ea457a624e096381ec28624d\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
-82            android:name="androidx.window.sidecar"
-82-->[androidx.window:window:1.0.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\a1bb1761ea457a624e096381ec28624d\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
-83            android:required="false" />
-83-->[androidx.window:window:1.0.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\a1bb1761ea457a624e096381ec28624d\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
-84
-85        <receiver
-85-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
-86            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
-87            android:directBootAware="false"
-87-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
-88            android:enabled="true"
-88-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
-89            android:exported="true"
-89-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
-90            android:permission="android.permission.DUMP" >
-90-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
-91            <intent-filter>
-91-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
-92                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-92-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-92-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
-93            </intent-filter>
-94            <intent-filter>
-94-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
-95                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-95-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-95-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
-96            </intent-filter>
-97            <intent-filter>
-97-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
-98                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-98-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-98-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
-99            </intent-filter>
-100            <intent-filter>
-100-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
-101                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-101-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-101-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
-102            </intent-filter>
-103        </receiver>
-104    </application>
-105
-106</manifest>
+42-->D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:23:13-37
+43
+44        <!-- <activity -->
+45        <!-- android:name=".HomeFunction.MainActivity" -->
+46        <!-- android:exported="false" /> -->
+47
+48
+49        <!-- <activity -->
+50        <!-- android:name=".LoginFunction.RegisterActivity" -->
+51        <!-- android:exported="false" /> -->
+52
+53
+54        <!-- <activity -->
+55        <!-- android:name=".LoginFunction.PasswordRegistrationActivity" -->
+56        <!-- android:exported="false" /> -->
+57
+58
+59        <!-- <activity -->
+60        <!-- android:name=".LoginFunction.ForgotPasswordActivity" -->
+61        <!-- android:exported="false" /> -->
+62        <!-- <activity -->
+63        <!-- android:name=".LoginFunction.VerifyOTPActivity" -->
+64        <!-- android:exported="false" /> -->
+65        <!-- <activity -->
+66        <!-- android:name=".LoginFunction.ResetPasswordActivity" -->
+67        <!-- android:exported="false" /> -->
+68        <!-- <activity -->
+69        <!-- android:name=".LoginFunction.ResetSuccessActivity" -->
+70        <!-- android:exported="false" /> -->
+71        <!-- <activity -->
+72        <!-- android:name=".LoginFunction.UserInfoActivity" -->
+73        <!-- android:exported="false" /> -->
+74        <!-- &lt;!&ndash; Nếu bạn có các Fragment, không cần khai báo chúng ở đây &ndash;&gt; -->
+75
+76        <provider
+76-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\af72ac5d767758a5ce4520f1c86d766f\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+77            android:name="androidx.startup.InitializationProvider"
+77-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\af72ac5d767758a5ce4520f1c86d766f\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+78            android:authorities="com.example.watertrackerandroidapp.androidx-startup"
+78-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\af72ac5d767758a5ce4520f1c86d766f\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+79            android:exported="false" >
+79-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\af72ac5d767758a5ce4520f1c86d766f\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+80            <meta-data
+80-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\af72ac5d767758a5ce4520f1c86d766f\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+81                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+81-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\af72ac5d767758a5ce4520f1c86d766f\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+82                android:value="androidx.startup" />
+82-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\af72ac5d767758a5ce4520f1c86d766f\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+83            <meta-data
+83-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Dell\.gradle\caches\8.10.2\transforms\84640b59c54dd92f8370174ec37ab62e\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+84                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+84-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Dell\.gradle\caches\8.10.2\transforms\84640b59c54dd92f8370174ec37ab62e\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+85                android:value="androidx.startup" />
+85-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Dell\.gradle\caches\8.10.2\transforms\84640b59c54dd92f8370174ec37ab62e\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+86            <meta-data
+86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+87                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+87-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+88                android:value="androidx.startup" />
+88-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+89        </provider>
+90
+91        <uses-library
+91-->[androidx.window:window:1.0.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\a1bb1761ea457a624e096381ec28624d\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+92            android:name="androidx.window.extensions"
+92-->[androidx.window:window:1.0.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\a1bb1761ea457a624e096381ec28624d\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+93            android:required="false" />
+93-->[androidx.window:window:1.0.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\a1bb1761ea457a624e096381ec28624d\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+94        <uses-library
+94-->[androidx.window:window:1.0.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\a1bb1761ea457a624e096381ec28624d\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+95            android:name="androidx.window.sidecar"
+95-->[androidx.window:window:1.0.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\a1bb1761ea457a624e096381ec28624d\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+96            android:required="false" />
+96-->[androidx.window:window:1.0.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\a1bb1761ea457a624e096381ec28624d\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+97
+98        <receiver
+98-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+99            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+99-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+100            android:directBootAware="false"
+100-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+101            android:enabled="true"
+101-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+102            android:exported="true"
+102-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+103            android:permission="android.permission.DUMP" >
+103-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+104            <intent-filter>
+104-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+105                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+105-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+105-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+106            </intent-filter>
+107            <intent-filter>
+107-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+108                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+108-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+108-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+109            </intent-filter>
+110            <intent-filter>
+110-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+111                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+111-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+111-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+112            </intent-filter>
+113            <intent-filter>
+113-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+114                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+114-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+114-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\7e1de1f93be7cd86052542d8e0caad44\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+115            </intent-filter>
+116        </receiver>
+117    </application>
+118
+119</manifest>

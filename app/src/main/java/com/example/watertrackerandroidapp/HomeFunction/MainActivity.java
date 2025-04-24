@@ -25,7 +25,7 @@ import com.example.watertrackerandroidapp.CustomViews.WaterProgressView;
 import com.example.watertrackerandroidapp.Models.WaterIntake;
 import com.example.watertrackerandroidapp.ProfileFunction.ProfileActivity;
 import com.example.watertrackerandroidapp.R;
-import com.example.watertrackerandroidapp.SettingFunction.SettingFragment;
+import com.example.watertrackerandroidapp.SettingFunction.SettingActivity;
 import com.example.watertrackerandroidapp.StatisticsFunction.StatisticsActivity;
 import com.example.watertrackerandroidapp.DataBase.UserDao;
 import com.example.watertrackerandroidapp.DataBase.WaterIntakeDao;
@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         navSettings.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, SettingFragment.class);
+            Intent intent = new Intent(MainActivity.this, SettingActivity.class);
             startActivity(intent);
         });
 

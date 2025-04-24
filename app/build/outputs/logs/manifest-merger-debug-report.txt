@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:2:1-51:12
-INJECTED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:2:1-51:12
-INJECTED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:2:1-51:12
-INJECTED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:2:1-51:12
+ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:2:1-56:12
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\c6328c1b2cc12cadcde0690172e3a30f\transformed\material-1.11.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Dell\.gradle\caches\8.10.2\transforms\4ead353fd299a9dd2831593c57716036\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.preference:preference:1.2.1] C:\Users\Dell\.gradle\caches\8.10.2\transforms\3c4efa6a277a188b9d4f250654dd3c84\transformed\preference-1.2.1\AndroidManifest.xml:17:1-24:12
@@ -63,8 +63,8 @@ MERGED from [androidx.annotation:annotation-experimental:1.4.1] C:\Users\Dell\.g
 	xmlns:android
 		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:4:5-49:19
-INJECTED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:4:5-49:19
+ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:3:5-54:19
+INJECTED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:3:5-54:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\c6328c1b2cc12cadcde0690172e3a30f\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\c6328c1b2cc12cadcde0690172e3a30f\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Dell\.gradle\caches\8.10.2\transforms\4ead353fd299a9dd2831593c57716036\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -88,81 +88,45 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\De
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.15.0] C:\Users\Dell\.gradle\caches\8.10.2\transforms\c7ceb4e7bee9f10418c0e600beeaa4dc\transformed\core-1.15.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:9:9-35
+		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:8:9-35
 	android:label
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:7:9-41
+		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:6:9-41
 	android:roundIcon
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:8:9-54
+		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:7:9-54
 	android:icon
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:6:9-43
+		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:5:9-43
 	android:allowBackup
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:5:9-35
+		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:4:9-35
 	android:theme
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:10:9-60
-activity#com.example.watertrackerandroidapp.LoginFunction.LoginActivity
-ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:11:9-18:20
+		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:9:9-60
+activity#com.example.watertrackerandroidapp.SettingFunction.SettingActivity
+ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:10:9-17:20
 	android:exported
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:13:13-36
+		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:12:13-36
 	android:name
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:12:13-56
+		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:11:13-60
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:14:13-17:29
+ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:13:13-16:29
 action#android.intent.action.MAIN
-ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:15:17-69
+ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:14:17-69
 	android:name
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:15:25-66
+		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:14:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:16:17-77
+ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:15:17-77
 	android:name
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:16:27-74
-activity#com.example.watertrackerandroidapp.HomeFunction.MainActivity
-ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:20:9-22:40
+		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:15:27-74
+activity#com.example.watertrackerandroidapp.SettingFunction.Activity.SoundSelectionActivity
+ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:18:9-20:40
 	android:exported
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:22:13-37
+		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:20:13-37
 	android:name
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:21:13-54
-activity#com.example.watertrackerandroidapp.LoginFunction.RegisterActivity
-ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:24:9-26:40
+		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:19:13-76
+activity#com.example.watertrackerandroidapp.SettingFunction.Activity.ScheduleActivity
+ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:21:9-23:40
 	android:exported
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:26:13-37
+		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:23:13-37
 	android:name
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:25:13-59
-activity#com.example.watertrackerandroidapp.LoginFunction.PasswordRegistrationActivity
-ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:28:9-30:40
-	android:exported
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:30:13-37
-	android:name
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:29:13-71
-activity#com.example.watertrackerandroidapp.LoginFunction.ForgotPasswordActivity
-ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:32:9-34:40
-	android:exported
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:34:13-37
-	android:name
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:33:13-65
-activity#com.example.watertrackerandroidapp.LoginFunction.VerifyOTPActivity
-ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:35:9-37:40
-	android:exported
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:37:13-37
-	android:name
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:36:13-60
-activity#com.example.watertrackerandroidapp.LoginFunction.ResetPasswordActivity
-ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:38:9-40:40
-	android:exported
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:40:13-37
-	android:name
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:39:13-64
-activity#com.example.watertrackerandroidapp.LoginFunction.ResetSuccessActivity
-ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:41:9-43:40
-	android:exported
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:43:13-37
-	android:name
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:42:13-63
-activity#com.example.watertrackerandroidapp.LoginFunction.UserInfoActivity
-ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:44:9-46:40
-	android:exported
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:46:13-37
-	android:name
-		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:45:13-59
+		ADDED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml:22:13-70
 uses-sdk
 INJECTED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\watertrackerandroidapp\app\src\main\AndroidManifest.xml

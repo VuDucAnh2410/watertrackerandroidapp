@@ -26,7 +26,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.WaterTrackerAndroidApp" >
         <activity
-            android:name="com.example.watertrackerandroidapp.LoginFunction.LoginActivity"
+            android:name="com.example.watertrackerandroidapp.SettingFunction.SettingActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,30 +35,43 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.watertrackerandroidapp.HomeFunction.MainActivity"
+            android:name="com.example.watertrackerandroidapp.SettingFunction.Activity.SoundSelectionActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.watertrackerandroidapp.LoginFunction.RegisterActivity"
+            android:name="com.example.watertrackerandroidapp.SettingFunction.Activity.ScheduleActivity"
             android:exported="false" />
-        <activity
-            android:name="com.example.watertrackerandroidapp.LoginFunction.PasswordRegistrationActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.watertrackerandroidapp.LoginFunction.ForgotPasswordActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.watertrackerandroidapp.LoginFunction.VerifyOTPActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.watertrackerandroidapp.LoginFunction.ResetPasswordActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.watertrackerandroidapp.LoginFunction.ResetSuccessActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.watertrackerandroidapp.LoginFunction.UserInfoActivity"
-            android:exported="false" />
-        <!-- Nếu bạn có các Fragment, không cần khai báo chúng ở đây -->
+
+        <!-- <activity -->
+        <!-- android:name=".HomeFunction.MainActivity" -->
+        <!-- android:exported="false" /> -->
+
+
+        <!-- <activity -->
+        <!-- android:name=".LoginFunction.RegisterActivity" -->
+        <!-- android:exported="false" /> -->
+
+
+        <!-- <activity -->
+        <!-- android:name=".LoginFunction.PasswordRegistrationActivity" -->
+        <!-- android:exported="false" /> -->
+
+
+        <!-- <activity -->
+        <!-- android:name=".LoginFunction.ForgotPasswordActivity" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".LoginFunction.VerifyOTPActivity" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".LoginFunction.ResetPasswordActivity" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".LoginFunction.ResetSuccessActivity" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".LoginFunction.UserInfoActivity" -->
+        <!-- android:exported="false" /> -->
+        <!-- &lt;!&ndash; Nếu bạn có các Fragment, không cần khai báo chúng ở đây &ndash;&gt; -->
 
         <provider
             android:name="androidx.startup.InitializationProvider"

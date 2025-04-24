@@ -3080,6 +3080,7 @@ int drawable ic_alarm 0x7f080089
 int drawable ic_arrow_back 0x7f08008a
 int drawable ic_arrow_back_black_24 0x7f08008b
 int drawable ic_arrow_down_24dp 0x7f08008c
+int drawable ic_back 0x7f0800fd
 int drawable ic_call_answer 0x7f08008d
 int drawable ic_call_answer_low 0x7f08008e
 int drawable ic_call_answer_video 0x7f08008f
@@ -3089,6 +3090,7 @@ int drawable ic_call_decline_low 0x7f080092
 int drawable ic_clear_black_24 0x7f080093
 int drawable ic_clock_black_24dp 0x7f080094
 int drawable ic_home 0x7f080095
+int drawable ic_input_add 0x7f0800fe
 int drawable ic_keyboard_black_24dp 0x7f080096
 int drawable ic_launcher_background 0x7f080097
 int drawable ic_launcher_foreground 0x7f080098
@@ -3472,6 +3474,7 @@ int id line1 0x7f090114
 int id line3 0x7f090115
 int id linear 0x7f090116
 int id listMode 0x7f090117
+int id listViewReminder 0x7f090246
 int id listViewSounds 0x7f090118
 int id list_item 0x7f090119
 int id locale 0x7f09011a
@@ -3608,7 +3611,6 @@ int id rbFemale 0x7f09019c
 int id rbMale 0x7f09019d
 int id rbOther 0x7f09019e
 int id rectangles 0x7f09019f
-int id recyclerView 0x7f0901a0
 int id recycler_view 0x7f0901a1
 int id report_drawn 0x7f0901a2
 int id reverseSawtooth 0x7f0901a3
@@ -3719,6 +3721,7 @@ int id textinput_placeholder 0x7f09020b
 int id textinput_prefix_text 0x7f09020c
 int id textinput_suffix_text 0x7f09020d
 int id time 0x7f09020e
+int id timePicker 0x7f09024a
 int id title 0x7f09020f
 int id titleDividerNoCustom 0x7f090210
 int id title_template 0x7f090211
@@ -3749,6 +3752,7 @@ int id tvTarget 0x7f090229
 int id tvTime 0x7f09022a
 int id tvTitle 0x7f09022b
 int id tvValidationMessage 0x7f09022c
+int id tvWaterGoal 0x7f090247
 int id unchecked 0x7f09022d
 int id uniform 0x7f09022e
 int id unlabeled 0x7f09022f
@@ -3897,11 +3901,6 @@ int layout activity_password_registration 0x7f0c001f
 int layout activity_register 0x7f0c0020
 int layout activity_reset_password 0x7f0c0021
 int layout activity_reset_success 0x7f0c0022
-int layout activity_setting 0x7f0c0023
-int layout activity_setting_reminder 0x7f0c0024
-int layout activity_setting_reminder_item 0x7f0c0025
-int layout activity_setting_sound 0x7f0c0026
-int layout activity_setting_soundoption 0x7f0c0027
 int layout activity_user_info 0x7f0c0028
 int layout activity_verify_otp 0x7f0c0029
 int layout custom_dialog 0x7f0c002a
@@ -4005,10 +4004,20 @@ int layout preference_widget_switch_compat 0x7f0c008b
 int layout select_dialog_item_material 0x7f0c008c
 int layout select_dialog_multichoice_material 0x7f0c008d
 int layout select_dialog_singlechoice_material 0x7f0c008e
+int layout setting 0x7f0c0090
+int layout setting_schedule 0x7f0c0091
+int layout setting_schedule_dialog_time_picker 0x7f0c0095
+int layout setting_schedule_item 0x7f0c0092
+int layout setting_sound 0x7f0c0093
+int layout setting_sound_item 0x7f0c0094
 int layout support_simple_spinner_dropdown_item 0x7f0c008f
 int mipmap ic_launcher 0x7f0e0000
 int mipmap ic_launcher_round 0x7f0e0001
 int plurals mtrl_badge_content_description 0x7f0f0000
+int raw classic 0x7f140000
+int raw nature 0x7f140001
+int raw water_drop 0x7f140002
+int raw water_pouring 0x7f140003
 int string abc_action_bar_home_description 0x7f100000
 int string abc_action_bar_up_description 0x7f100001
 int string abc_action_menu_overflow_description 0x7f100002
