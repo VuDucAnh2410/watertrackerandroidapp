@@ -3089,6 +3089,7 @@ int drawable ic_call_decline 0x7f080091
 int drawable ic_call_decline_low 0x7f080092
 int drawable ic_clear_black_24 0x7f080093
 int drawable ic_clock_black_24dp 0x7f080094
+int drawable ic_delete_bin 0x7f0800ff
 int drawable ic_home 0x7f080095
 int drawable ic_input_add 0x7f0800fe
 int drawable ic_keyboard_black_24dp 0x7f080096
@@ -3474,7 +3475,6 @@ int id line1 0x7f090114
 int id line3 0x7f090115
 int id linear 0x7f090116
 int id listMode 0x7f090117
-int id listViewReminder 0x7f090246
 int id listViewSounds 0x7f090118
 int id list_item 0x7f090119
 int id locale 0x7f09011a
@@ -3623,6 +3623,7 @@ int id rounded 0x7f0901a9
 int id row_index_key 0x7f0901aa
 int id rtl 0x7f0901ab
 int id rvHistory 0x7f0901ac
+int id rvReminder 0x7f09024d
 int id save_non_transition_alpha 0x7f0901ad
 int id save_overlay_view 0x7f0901ae
 int id sawtooth 0x7f0901af

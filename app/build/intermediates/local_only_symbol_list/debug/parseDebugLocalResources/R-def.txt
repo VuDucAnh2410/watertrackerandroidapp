@@ -19,6 +19,7 @@ drawable button_otp_background
 drawable ic_alarm
 drawable ic_arrow_back
 drawable ic_back
+drawable ic_delete_bin
 drawable ic_home
 drawable ic_input_add
 drawable ic_launcher_background
@@ -78,7 +79,6 @@ id inputLayoutPassword
 id inputLayoutPhone
 id ivIcon
 id ivTips
-id listViewReminder
 id listViewSounds
 id navHome
 id navProfile
@@ -93,6 +93,7 @@ id rbMale
 id rbOther
 id rgGender
 id rvHistory
+id rvReminder
 id seekBarGoal
 id switchReminder
 id tabLayout
