@@ -3644,6 +3644,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id seekBarGoal
 id seekbar
 id seekbar_value
 id select_dialog_listview
@@ -3742,6 +3743,7 @@ id tvAmount
 id tvConsumed
 id tvError
 id tvForgotPassword
+id tvGoalValue
 id tvLogin
 id tvOTPMessage
 id tvPercentage
@@ -4006,6 +4008,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout setting
+layout setting_dialog_adjust_goal
 layout setting_schedule
 layout setting_schedule_dialog_time_picker
 layout setting_schedule_item

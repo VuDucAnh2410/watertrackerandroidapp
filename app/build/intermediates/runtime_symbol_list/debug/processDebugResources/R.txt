@@ -3643,6 +3643,7 @@ int id search_mag_icon 0x7f0901bd
 int id search_plate 0x7f0901be
 int id search_src_text 0x7f0901bf
 int id search_voice_btn 0x7f0901c0
+int id seekBarGoal 0x7f09024b
 int id seekbar 0x7f0901c1
 int id seekbar_value 0x7f0901c2
 int id select_dialog_listview 0x7f0901c3
@@ -3741,6 +3742,7 @@ int id tvAmount 0x7f09021e
 int id tvConsumed 0x7f09021f
 int id tvError 0x7f090220
 int id tvForgotPassword 0x7f090221
+int id tvGoalValue 0x7f09024c
 int id tvLogin 0x7f090222
 int id tvOTPMessage 0x7f090223
 int id tvPercentage 0x7f090224
@@ -4005,6 +4007,7 @@ int layout select_dialog_item_material 0x7f0c008c
 int layout select_dialog_multichoice_material 0x7f0c008d
 int layout select_dialog_singlechoice_material 0x7f0c008e
 int layout setting 0x7f0c0090
+int layout setting_dialog_adjust_goal 0x7f0c0096
 int layout setting_schedule 0x7f0c0091
 int layout setting_schedule_dialog_time_picker 0x7f0c0095
 int layout setting_schedule_item 0x7f0c0092

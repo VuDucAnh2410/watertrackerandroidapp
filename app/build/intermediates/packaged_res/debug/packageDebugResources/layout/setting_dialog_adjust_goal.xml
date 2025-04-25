@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Tiêu đề dialog -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Điều chỉnh mục tiêu"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:padding="8dp"/>
+
+    <!-- TextView hiển thị giá trị -->
+    <TextView
+        android:id="@+id/tvGoalValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1500 ml"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:padding="8dp"/>
+
+    <!-- SeekBar -->
+    <SeekBar
+        android:id="@+id/seekBarGoal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="3000"
+        android:progress="1500"/>
+
+    <!-- Nút Hủy bỏ và Đồng ý -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="right"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HỦY BỎ"
+            android:textColor="@color/darkGray"
+            android:backgroundTint="@color/white"
+            android:layout_marginEnd="16dp"/>
+
+        <Button
+            android:id="@+id/btnConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/lightBlue"
+            android:backgroundTint="@color/white"
+            android:text="ĐỒNG Ý"/>
+    </LinearLayout>
+</LinearLayout>

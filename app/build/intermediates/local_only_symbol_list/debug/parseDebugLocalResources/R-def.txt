@@ -93,6 +93,7 @@ id rbMale
 id rbOther
 id rgGender
 id rvHistory
+id seekBarGoal
 id switchReminder
 id tabLayout
 id timePicker
@@ -100,6 +101,7 @@ id tvAmount
 id tvConsumed
 id tvError
 id tvForgotPassword
+id tvGoalValue
 id tvLogin
 id tvOTPMessage
 id tvPercentage
@@ -129,6 +131,7 @@ layout home_dialog_water_amount
 layout home_dialog_water_tips
 layout home_item_water_history
 layout setting
+layout setting_dialog_adjust_goal
 layout setting_schedule
 layout setting_schedule_dialog_time_picker
 layout setting_schedule_item

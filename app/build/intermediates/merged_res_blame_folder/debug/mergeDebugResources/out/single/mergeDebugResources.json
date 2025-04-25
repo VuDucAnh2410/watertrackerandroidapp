@@ -84,6 +84,10 @@
         "source": "C:\\Users\\Dell\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-42:\\drawable\\rounded_dialog_background.xml"
     },
     {
+        "merged": "com.example.watertrackerandroidapp-debug-40:/layout_setting_dialog_adjust_goal.xml.flat",
+        "source": "com.example.watertrackerandroidapp-main-42:/layout/setting_dialog_adjust_goal.xml"
+    },
+    {
         "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-40:\\mipmap-hdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Dell\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-42:\\mipmap-hdpi\\ic_launcher.webp"
     },
@@ -134,10 +138,6 @@
     {
         "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-40:\\drawable_ic_water_cup.xml.flat",
         "source": "C:\\Users\\Dell\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-42:\\drawable\\ic_water_cup.xml"
-    },
-    {
-        "merged": "com.example.watertrackerandroidapp-debug-40:/layout_setting_schedule_dialog_time_picker.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-42:/layout/setting_schedule_dialog_time_picker.xml"
     },
     {
         "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-40:\\drawable_logoo_removebg_preview.png.flat",
