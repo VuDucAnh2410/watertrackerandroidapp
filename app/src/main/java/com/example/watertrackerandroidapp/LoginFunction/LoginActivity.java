@@ -1,13 +1,14 @@
 package com.example.watertrackerandroidapp.LoginFunction;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,100 +16,100 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.watertrackerandroidapp.HomeFunction.MainActivity;
 import com.example.watertrackerandroidapp.R;
-import com.example.watertrackerandroidapp.DataBase.WaterTrackerDao;
-import com.example.watertrackerandroidapp.DataBase.WaterTrackerDbHelper;
+import com.example.watertrackerandroidapp.Repository.AuthRepository;
+import com.example.watertrackerandroidapp.Repository.UserRepository;
 import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
-    private EditText etAccount; // Ô nhập tài khoản (số điện thoại hoặc email)
-    private EditText etPassword; // Ô nhập mật khẩu
-    private TabLayout tabLayout;
+    private static final long TIMEOUT_MS = 5000; // 5 giây timeout
+
+    // Repositories
+    private AuthRepository authRepository;
+    private UserRepository userRepository;
+
+    // UI Elements
+    private TextInputEditText etAccount;
+    private TextInputEditText etPassword;
     private Button btnLogin;
-    private TextView tvRegister, tvForgotPassword;
-    private TextInputLayout inputLayoutAccount; // TextInputLayout cho ô nhập tài khoản
-    private WaterTrackerDao waterTrackerDao; // Thêm DAO để tương tác với database
+    private TabLayout tabLayout;
+    private TextInputLayout inputLayoutAccount;
+    private TextInputLayout inputLayoutPassword;
+    private TextView tvRegister;
+    private TextView tvForgotPassword;
+    private TextView tvValidationMessage;
+    private LinearLayout connectionErrorLayout;
+    private TextView tvConnectionError;
+    private Button btnRetryConnection;
+    private ProgressBar progressBar;
+
+    // Handler cho timeout
+    private Handler timeoutHandler;
+    private Runnable checkUserInfoTimeoutRunnable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        WaterTrackerDbHelper dbHelper = new WaterTrackerDbHelper(this);
-        dbHelper.ensureDatabaseExists();
-        dbHelper.close();
+        // Khởi tạo timeout handler
+        timeoutHandler = new Handler(Looper.getMainLooper());
 
-        // Khởi tạo DAO
-        waterTrackerDao = new WaterTrackerDao(this);
+        // Khởi tạo repositories
+        authRepository = new AuthRepository();
+        userRepository = new UserRepository();
 
-        // Khởi tạo các view
+        // Khởi tạo views và thiết lập sự kiện
+        initViews();
+        setupListeners();
+
+        // Kiểm tra kết nối mạng
+        if (!isNetworkAvailable()) {
+            showNetworkConnectionError();
+        }
+    }
+
+    private void initViews() {
         etAccount = findViewById(R.id.etAccount);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
         tabLayout = findViewById(R.id.tabLayout);
+        inputLayoutAccount = findViewById(R.id.inputLayoutAccount);
+        inputLayoutPassword = findViewById(R.id.inputLayoutPassword);
         tvRegister = findViewById(R.id.tvRegister);
         tvForgotPassword = findViewById(R.id.tvForgotPassword);
-        inputLayoutAccount = findViewById(R.id.inputLayoutAccount); // Khởi tạo TextInputLayout
+        tvValidationMessage = findViewById(R.id.tvValidationMessage);
+        connectionErrorLayout = findViewById(R.id.connectionErrorLayout);
+        tvConnectionError = findViewById(R.id.tvConnectionError);
+        btnRetryConnection = findViewById(R.id.btnRetryConnection);
+        progressBar = findViewById(R.id.progressBar);
 
-        // Kiểm tra xem người dùng vừa đăng ký hay không
-        SharedPreferences sharedPreferences = getSharedPreferences("WaterReminderPrefs", MODE_PRIVATE);
-        boolean justRegistered = sharedPreferences.getBoolean("justRegistered", false);
+        // Cập nhật thông báo ban đầu
+        tvValidationMessage.setText("* Vui lòng nhập số điện thoại và mật khẩu");
+    }
 
-        if (justRegistered) {
-            // Xóa cờ justRegistered
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putBoolean("justRegistered", false);
-            editor.apply();
-
-            // Hiển thị thông báo cho người dùng
-            Toast.makeText(this, "Vui lòng đăng nhập với tài khoản vừa đăng ký", Toast.LENGTH_LONG).show();
-
-            // Không kiểm tra đăng nhập tự động
-        } else {
-            // Kiểm tra trạng thái đăng nhập
-            checkLoggedInStatus();
-        }
-
-        // Đặt sự kiện cho nút Đăng nhập
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String account = etAccount.getText().toString().trim();
-                String password = etPassword.getText().toString().trim();
-
-                if (account.isEmpty()) {
-                    etAccount.setError("Vui lòng nhập tài khoản");
-                    return;
-                }
-                if (password.isEmpty()) {
-                    etPassword.setError("Vui lòng nhập mật khẩu");
-                    return;
-                }
-
-                // Kiểm tra định dạng tài khoản dựa trên tab đang chọn
-                int selectedTab = tabLayout.getSelectedTabPosition();
-                if (selectedTab == 0) { // Tab Phone
-                    if (!isValidPhoneNumber(account)) {
-                        etAccount.setError("Số điện thoại không hợp lệ");
-                        return;
-                    }
-                } else { // Tab Email
-                    if (!isValidEmail(account)) {
-                        etAccount.setError("Email không hợp lệ");
-                        return;
-                    }
-                }
-
-                login(account, password, selectedTab); // Truyền thêm selectedTab
-            }
-        });
-
-        // Đặt sự kiện cho TabLayout
+    private void setupListeners() {
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                updateInputLabel(tab.getPosition()); // Cập nhật nhãn ô nhập
+                if (tab.getPosition() == 0) {
+                    inputLayoutAccount.setHint(getString(R.string.hint_phone));
+                    etAccount.setInputType(android.text.InputType.TYPE_CLASS_PHONE);
+                    inputLayoutPassword.setHint("Mật khẩu");
+                    etPassword.setInputType(android.text.InputType.TYPE_CLASS_TEXT | android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    tvValidationMessage.setText("* Vui lòng nhập số điện thoại và mật khẩu");
+                } else {
+                    inputLayoutAccount.setHint(getString(R.string.hint_email));
+                    etAccount.setInputType(android.text.InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+                    inputLayoutPassword.setHint(getString(R.string.hint_password));
+                    etPassword.setInputType(android.text.InputType.TYPE_CLASS_TEXT | android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    tvValidationMessage.setText("* Vui lòng nhập email và mật khẩu");
+                }
+                etAccount.setText("");
+                etPassword.setText("");
             }
 
             @Override
@@ -118,140 +119,183 @@ public class LoginActivity extends AppCompatActivity {
             public void onTabReselected(TabLayout.Tab tab) {}
         });
 
-        // Đặt sự kiện cho TextView Đăng ký
-        tvRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Chuyển đến RegisterActivity
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(intent);
-            }
-        });
+        btnLogin.setOnClickListener(v -> {
+            String account = etAccount.getText().toString().trim();
+            String password = etPassword.getText().toString().trim();
 
-        // Đặt sự kiện cho TextView Quên mật khẩu
-        tvForgotPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Logic để xử lý quên mật khẩu
-                Toast.makeText(LoginActivity.this, "Quên mật khẩu", Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        // Cập nhật ô nhập khi khởi tạo
-        updateInputLabel(tabLayout.getSelectedTabPosition());
-    }
-
-    // Kiểm tra trạng thái đăng nhập
-    private void checkLoggedInStatus() {
-        SharedPreferences sharedPreferences = getSharedPreferences("WaterReminderPrefs", MODE_PRIVATE);
-        boolean isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
-        String userId = sharedPreferences.getString("userId", null);
-
-        if (isLoggedIn && userId != null) {
-            // Người dùng đã đăng nhập, kiểm tra xem đã nhập thông tin cá nhân chưa
-            if (waterTrackerDao.isFirstTimeLogin(userId)) {
-                // Chưa nhập thông tin cá nhân, chuyển đến UserInfoActivity
-                Intent intent = new Intent(this, UserInfoActivity.class);
-                startActivity(intent);
-                finish();
-            } else {
-                // Đã nhập thông tin cá nhân, chuyển đến MainActivity
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        }
-    }
-
-    // Cập nhật ô nhập dựa trên tab đã chọn
-    private void updateInputLabel(int position) {
-        if (position == 0) {
-            inputLayoutAccount.setHint(getString(R.string.hint_phone)); // Cập nhật label thành "Nhập số điện thoại"
-            etAccount.setHint(R.string.hint_phone); // Placeholder cho số điện thoại
-        } else {
-            inputLayoutAccount.setHint(getString(R.string.hint_email)); // Cập nhật label thành "Nhập email"
-            etAccount.setHint(R.string.hint_email); // Placeholder cho email
-        }
-        etAccount.setText(""); // Xóa nội dung khi chuyển tab
-    }
-
-    // Kiểm tra định dạng email
-    private boolean isValidEmail(String email) {
-        return Patterns.EMAIL_ADDRESS.matcher(email).matches();
-    }
-
-    // Kiểm tra định dạng số điện thoại
-    private boolean isValidPhoneNumber(String phone) {
-        // Số điện thoại Việt Nam: bắt đầu bằng 0, có 10 số
-        return phone.matches("^0\\d{9}$");
-    }
-
-    private void login(String account, String password, int selectedTab) {
-        try {
-            // Kiểm tra đăng nhập trong database dựa trên loại tài khoản
-            String accountId;
-            if (selectedTab == 0) { // Tab Phone
-                accountId = waterTrackerDao.checkLoginByPhone(account, password);
-            } else { // Tab Email
-                accountId = waterTrackerDao.checkLoginByEmail(account, password);
+            if (account.isEmpty() || password.isEmpty()) {
+                tvValidationMessage.setText("* Vui lòng nhập đầy đủ thông tin");
+                return;
             }
 
-            if (accountId != null) {
-                // Đăng nhập thành công
-                // Lấy userId từ accountId
-                String userId = waterTrackerDao.getUserIdByAccountId(accountId);
+            showLoading(true);
 
-                if (userId != null) {
-                    // Lưu thông tin đăng nhập vào SharedPreferences
-                    saveLoginInfo(accountId, userId);
-
-                    Toast.makeText(this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
-
-                    // Kiểm tra xem người dùng đã nhập thông tin cá nhân chưa
-                    if (waterTrackerDao.isFirstTimeLogin(userId)) {
-                        // Chưa nhập thông tin cá nhân, chuyển đến UserInfoActivity
-                        Intent intent = new Intent(LoginActivity.this, UserInfoActivity.class);
-                        startActivity(intent);
-                    } else {
-                        // Đã nhập thông tin cá nhân, chuyển đến MainActivity
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(intent);
-                    }
-                    finish();
-                } else {
-                    Log.e(TAG, "Không thể lấy userId từ accountId: " + accountId);
-                    Toast.makeText(this, "Lỗi: Không thể lấy thông tin người dùng", Toast.LENGTH_SHORT).show();
+            if (tabLayout.getSelectedTabPosition() == 0) {
+                if (!isValidPhoneNumber(account)) {
+                    tvValidationMessage.setText("* Vui lòng nhập số điện thoại hợp lệ");
+                    showLoading(false);
+                    return;
                 }
+                loginWithPhone(account, password);
             } else {
-                // Đăng nhập thất bại
-                Toast.makeText(this, "Tài khoản hoặc mật khẩu không đúng", Toast.LENGTH_SHORT).show();
+                if (!isValidEmail(account)) {
+                    tvValidationMessage.setText("* Vui lòng nhập email hợp lệ");
+                    showLoading(false);
+                    return;
+                }
+                loginWithEmail(account, password);
             }
-        } catch (Exception e) {
-            Log.e(TAG, "Lỗi trong quá trình đăng nhập", e);
-            Toast.makeText(this, "Lỗi: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
+        });
+
+        tvRegister.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(intent);
+        });
+
+        tvForgotPassword.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
+            startActivity(intent);
+            Toast.makeText(this, "Chuyển hướng đến màn hình quên mật khẩu", Toast.LENGTH_SHORT).show();
+        });
+
+        btnRetryConnection.setOnClickListener(v -> {
+            if (isNetworkAvailable()) {
+                connectionErrorLayout.setVisibility(View.GONE);
+                recreate();
+            } else {
+                Toast.makeText(this, "Vẫn chưa có kết nối mạng", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
-    // Lưu thông tin đăng nhập vào SharedPreferences
-    private void saveLoginInfo(String accountId, String userId) {
-        SharedPreferences sharedPreferences = getSharedPreferences("WaterReminderPrefs", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("accountId", accountId);
-        editor.putString("userId", userId);
-        editor.putBoolean("isLoggedIn", true); // Đặt isLoggedIn = true khi đăng nhập thành công
-        editor.apply();
-        Log.d(TAG, "Đã lưu thông tin đăng nhập: accountId=" + accountId + ", userId=" + userId);
+    private boolean isValidEmail(String email) {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
+
+    private boolean isValidPhoneNumber(String phoneNumber) {
+        return phoneNumber.matches("\\d{9,15}");
+    }
+
+    private boolean isNetworkAvailable() {
+        android.net.ConnectivityManager cm = (android.net.ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+        android.net.NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        return activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+    }
+
+    private void showNetworkConnectionError() {
+        tvConnectionError.setText("Không có kết nối mạng. Vui lòng kiểm tra và thử lại.");
+        connectionErrorLayout.setVisibility(View.VISIBLE);
+    }
+
+    private void showLoading(boolean show) {
+        progressBar.setVisibility(show ? View.VISIBLE : View.GONE);
+        btnLogin.setEnabled(!show);
+    }
+
+    private void loginWithEmail(String email, String password) {
+        authRepository.loginWithEmail(email, password, new AuthRepository.AuthCallback() {
+            @Override
+            public void onSuccess(FirebaseUser user) {
+                Log.d(TAG, "Email login successful: " + user.getEmail());
+                checkUserInfoAndRedirect(user.getUid());
+            }
+
+            @Override
+            public void onError(String errorMessage) {
+                Log.e(TAG, "Email login failed: " + errorMessage);
+                showLoading(false);
+                tvValidationMessage.setText("Đăng nhập thất bại: " + errorMessage);
+            }
+        });
+    }
+
+    private void loginWithPhone(String phone, String password) {
+        authRepository.loginWithPhoneEmail(phone, password, new AuthRepository.AuthCallback() {
+            @Override
+            public void onSuccess(FirebaseUser user) {
+                Log.d(TAG, "Phone login successful: " + user.getEmail());
+                checkUserInfoAndRedirect(user.getUid());
+            }
+
+            @Override
+            public void onError(String errorMessage) {
+                Log.e(TAG, "Phone login failed: " + errorMessage);
+                showLoading(false);
+                tvValidationMessage.setText("Đăng nhập thất bại: " + errorMessage);
+            }
+        });
+    }
+
+    private void checkUserInfoAndRedirect(String userId) {
+        showLoading(true);
+
+        // Hủy timeout trước đó nếu có
+        if (checkUserInfoTimeoutRunnable != null) {
+            timeoutHandler.removeCallbacks(checkUserInfoTimeoutRunnable);
+        }
+
+        // Thiết lập timeout mới
+        checkUserInfoTimeoutRunnable = () -> {
+            Log.w(TAG, "Timeout: No response for user info after " + TIMEOUT_MS + "ms");
+            Toast.makeText(LoginActivity.this, "Không thể kiểm tra thông tin người dùng. Đang chuyển hướng...", Toast.LENGTH_SHORT).show();
+            navigateToMainActivity();
+        };
+        timeoutHandler.postDelayed(checkUserInfoTimeoutRunnable, TIMEOUT_MS);
+
+        userRepository.getUserById(userId, new UserRepository.OnUserLoadedListener() {
+            @Override
+            public void onUserLoaded(com.example.watertrackerandroidapp.Models.User user) {
+                // Hủy timeout
+                timeoutHandler.removeCallbacks(checkUserInfoTimeoutRunnable);
+                checkUserInfoTimeoutRunnable = null;
+
+                showLoading(false);
+                if (user != null && user.isHasUserInfo()) {
+                    Log.d(TAG, "User has info, redirecting to MainActivity");
+                    navigateToMainActivity();
+                } else {
+                    Log.d(TAG, "User has no info, redirecting to UserInfoActivity");
+                    navigateToUserInfoActivity();
+                }
+            }
+
+            @Override
+            public void onError(String errorMessage) {
+                // Hủy timeout
+                timeoutHandler.removeCallbacks(checkUserInfoTimeoutRunnable);
+                checkUserInfoTimeoutRunnable = null;
+
+                Log.e(TAG, "Error checking user info: " + errorMessage);
+                showLoading(false);
+                tvValidationMessage.setText("Lỗi kiểm tra thông tin người dùng: " + errorMessage);
+                timeoutHandler.postDelayed(() -> navigateToMainActivity(), 3000);
+            }
+        });
+    }
+
+    private void navigateToMainActivity() {
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        // Trì hoãn finish để tránh lỗi Input channel
+        new Handler(Looper.getMainLooper()).postDelayed(this::finish, 100);
+    }
+
+    private void navigateToUserInfoActivity() {
+        Intent intent = new Intent(LoginActivity.this, UserInfoActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        // Trì hoãn finish để tránh lỗi Input channel
+        new Handler(Looper.getMainLooper()).postDelayed(this::finish, 100);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (waterTrackerDao != null) {
-            waterTrackerDao.close();
+        // Hủy timeout
+        if (checkUserInfoTimeoutRunnable != null) {
+            timeoutHandler.removeCallbacks(checkUserInfoTimeoutRunnable);
+            checkUserInfoTimeoutRunnable = null;
         }
     }
 }
-

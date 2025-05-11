@@ -1,70 +1,54 @@
 package com.example.watertrackerandroidapp.LoginFunction;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.watertrackerandroidapp.R;
-import com.example.watertrackerandroidapp.DataBase.WaterTrackerDao;
 import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
-    // Khai báo các view
     private TabLayout tabLayout;
-    private TextInputLayout inputLayoutAccount;
-    private TextInputEditText etAccount;
+    private TextInputLayout inputLayoutPhone;
+    private TextInputEditText etInput;
     private Button btnResetPassword;
-    private TextView tvLogin;
-    private TextView tvError;
-    private TextView tvRegister;
-
-    // Khai báo DAO
-    private WaterTrackerDao waterTrackerDao;
-    private String verificationCode = "123456"; // Mã OTP mặc định (trong thực tế nên tạo ngẫu nhiên)
+    private TextView tvLogin, tvValidationMessage;
+    private FirebaseAuth mAuth;
+    private boolean isPhoneSelected = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
 
-        // Khởi tạo DAO
-        waterTrackerDao = new WaterTrackerDao(this);
+        // Khởi tạo Firebase
+        mAuth = FirebaseAuth.getInstance();
 
-        // Khởi tạo các view
+        // Khởi tạo views
         tabLayout = findViewById(R.id.tabLayout);
-        inputLayoutAccount = findViewById(R.id.inputLayoutAccount);
-        etAccount = findViewById(R.id.etAccount);
+        inputLayoutPhone = findViewById(R.id.inputLayoutPhone);
+        etInput = findViewById(R.id.etInput);
         btnResetPassword = findViewById(R.id.btnResetPassword);
         tvLogin = findViewById(R.id.tvLogin);
-        tvError = findViewById(R.id.tvError);
+        tvValidationMessage = findViewById(R.id.tvValidationMessage);
 
-        // Thiết lập sự kiện cho TabLayout
+        // Thiết lập TabLayout
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                if (tab.getPosition() == 0) {
-                    // Tab Số điện thoại
-                    etAccount.setHint("Nhập số điện thoại của bạn");
-                    etAccount.setInputType(android.text.InputType.TYPE_CLASS_PHONE);
-                    updateInputLabel(tab.getPosition());
-                    tvError.setText("* Vui lòng nhập số điện thoại để lấy mã xác nhận");
-                } else {
-                    // Tab Email
-                    etAccount.setHint("Nhập email của bạn");
-                    etAccount.setInputType(android.text.InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
-                    updateInputLabel(tab.getPosition());
-                    tvError.setText("* Vui lòng nhập email để lấy mã xác nhận");
-                }
-                etAccount.setText("");
-                inputLayoutAccount.setError(null);
-
+                isPhoneSelected = tab.getPosition() == 0;
+                etInput.setText("");
+                etInput.setInputType(isPhoneSelected ? android.text.InputType.TYPE_CLASS_PHONE : android.text.InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+                inputLayoutPhone.setHint(isPhoneSelected ? getString(R.string.hint_phone) : getString(R.string.hint_email));
+                tvValidationMessage.setText(isPhoneSelected ? "* Vui lòng nhập số điện thoại để nhận email đặt lại mật khẩu" : "* Vui lòng nhập email để nhận email đặt lại mật khẩu");
+                inputLayoutPhone.setError(null);
             }
 
             @Override
@@ -74,100 +58,56 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             public void onTabReselected(TabLayout.Tab tab) {}
         });
 
-        // Thiết lập sự kiện cho nút lấy lại mật khẩu
-        btnResetPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (validateInput()) {
-                    String identifier = etAccount.getText().toString().trim();
-                    boolean isPhone = tabLayout.getSelectedTabPosition() == 0;
+        // Xử lý nút gửi email đặt lại mật khẩu
+        btnResetPassword.setOnClickListener(v -> {
+            String input = etInput.getText().toString().trim();
 
-                    // Kiểm tra tài khoản tồn tại
-                    String accountId = waterTrackerDao.getAccountIdByIdentifier(identifier);
+            if (TextUtils.isEmpty(input)) {
+                tvValidationMessage.setText(isPhoneSelected ? "* Vui lòng nhập số điện thoại" : "* Vui lòng nhập email");
+                inputLayoutPhone.setError(isPhoneSelected ? "Vui lòng nhập số điện thoại" : "Vui lòng nhập email");
+                return;
+            }
 
-                    if (accountId != null) {
-                        // Tài khoản tồn tại, lưu thông tin và chuyển đến màn hình xác thực OTP
-                        saveResetInfo(identifier, isPhone);
-
-                        // Trong thực tế, bạn sẽ gửi mã OTP đến email hoặc số điện thoại
-                        // Ở đây, chúng ta giả định mã OTP là "123456"
-
-                        // Chuyển đến màn hình xác thực OTP
-                        Intent intent = new Intent(ForgotPasswordActivity.this, VerifyOTPActivity.class);
-                        startActivity(intent);
-                    } else {
-                        // Tài khoản không tồn tại
-                        inputLayoutAccount.setError("Tài khoản không tồn tại");
-                        Toast.makeText(ForgotPasswordActivity.this,
-                                "Tài khoản không tồn tại", Toast.LENGTH_SHORT).show();
-                    }
+            String email;
+            if (isPhoneSelected) {
+                if (!input.matches("\\d+")) {
+                    tvValidationMessage.setText("* Số điện thoại không hợp lệ");
+                    inputLayoutPhone.setError("Số điện thoại không hợp lệ");
+                    return;
                 }
+                email = input + "@phone.com";
+            } else {
+                if (!Patterns.EMAIL_ADDRESS.matcher(input).matches()) {
+                    tvValidationMessage.setText("* Email không hợp lệ");
+                    inputLayoutPhone.setError("Email không hợp lệ");
+                    return;
+                }
+                email = input;
             }
+
+            // Gửi email đặt lại mật khẩu
+            mAuth.sendPasswordResetEmail(email)
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(ForgotPasswordActivity.this, "Email đặt lại mật khẩu đã được gửi. Vui lòng kiểm tra email.", Toast.LENGTH_LONG).show();
+                            // Chuyển về LoginActivity
+                            Intent intent = new Intent(ForgotPasswordActivity.this, LoginActivity.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            tvValidationMessage.setText("* Lỗi: " + task.getException().getMessage());
+                            inputLayoutPhone.setError("Lỗi gửi email");
+                        }
+                    });
         });
 
-        // Thiết lập sự kiện cho nút quay lại đăng nhập
-        tvLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
+        // Xử lý liên kết quay lại đăng nhập
+        tvLogin.setOnClickListener(v -> {
+            Intent intent = new Intent(ForgotPasswordActivity.this, LoginActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            finish();
         });
-    }
-
-    private void updateInputLabel(int position) {
-        if (position == 0) {
-            inputLayoutAccount.setHint(getString(R.string.hint_phone)); // Cập nhật label thành "Nhập số điện thoại"
-            etAccount.setHint(R.string.hint_phone); // Placeholder cho số điện thoại
-        } else {
-            inputLayoutAccount.setHint(getString(R.string.hint_email)); // Cập nhật label thành "Nhập email"
-            etAccount.setHint(R.string.hint_email); // Placeholder cho email
-        }
-        etAccount.setText(""); // Xóa nội dung khi chuyển tab
-    }
-
-    private boolean validateInput() {
-        String input = etAccount.getText().toString().trim();
-        boolean isPhone = tabLayout.getSelectedTabPosition() == 0;
-
-        if (input.isEmpty()) {
-            inputLayoutAccount.setError("Vui lòng nhập " + (isPhone ? "số điện thoại" : "email"));
-            return false;
-        }
-
-        if (isPhone) {
-            if (!input.matches("^0\\d{9}$")) {
-                inputLayoutAccount.setError("Số điện thoại không hợp lệ");
-                return false;
-            }
-        } else {
-            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(input).matches()) {
-                inputLayoutAccount.setError("Email không hợp lệ");
-                return false;
-            }
-        }
-
-        inputLayoutAccount.setError(null);
-        return true;
-    }
-
-    // Lưu thông tin đặt lại mật khẩu
-    // Lưu thông tin đặt lại mật khẩu
-    private void saveResetInfo(String identifier, boolean isPhone) {
-        SharedPreferences sharedPreferences = getSharedPreferences("WaterReminderPrefs", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("resetIdentifier", identifier);
-        editor.putBoolean("resetIsPhone", isPhone);
-        editor.putString("resetOTP", verificationCode); // Trong thực tế, mã OTP nên được tạo ngẫu nhiên
-        editor.putBoolean("isResetting", true);
-        editor.putBoolean("isRegistering", false); // Đảm bảo flag đăng ký bị tắt
-        editor.apply();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (waterTrackerDao != null) {
-            waterTrackerDao.close();
-        }
     }
 }
