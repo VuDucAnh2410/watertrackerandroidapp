@@ -12,10 +12,6 @@
         "source": "C:\\Users\\Dell\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-42:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-40:/layout_setting_schedule_item.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-42:/layout/setting_schedule_item.xml"
-    },
-    {
         "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-40:\\layout_activity_login.xml.flat",
         "source": "C:\\Users\\Dell\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-42:\\layout\\activity_login.xml"
     },
@@ -24,12 +20,12 @@
         "source": "C:\\Users\\Dell\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-42:\\raw\\nature.wav"
     },
     {
-        "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-40:\\layout_activity_register.xml.flat",
-        "source": "C:\\Users\\Dell\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-42:\\layout\\activity_register.xml"
-    },
-    {
         "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-40:\\drawable_speech_bubble.xml.flat",
         "source": "C:\\Users\\Dell\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-42:\\drawable\\speech_bubble.xml"
+    },
+    {
+        "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-40:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\Dell\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-42:\\layout\\activity_register.xml"
     },
     {
         "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-40:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
@@ -78,6 +74,10 @@
     {
         "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-40:\\raw_water_drop.wav.flat",
         "source": "C:\\Users\\Dell\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-42:\\raw\\water_drop.wav"
+    },
+    {
+        "merged": "com.example.watertrackerandroidapp-debug-40:/layout_setting.xml.flat",
+        "source": "com.example.watertrackerandroidapp-main-42:/layout/setting.xml"
     },
     {
         "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-40:\\layout_fragment_email_login.xml.flat",
