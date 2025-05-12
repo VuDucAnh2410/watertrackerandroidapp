@@ -3348,13 +3348,11 @@ int id etAccount 0x7f0800c5
 int id etAge 0x7f0800c6
 int id etConfirmPassword 0x7f0800c7
 int id etCustomAmount 0x7f0800c8
-int id etEmail 0x7f0800c9
 int id etFullName 0x7f0800ca
 int id etHeight 0x7f0800cb
 int id etInput 0x7f0800cc
 int id etNewPassword 0x7f0800cd
 int id etPassword 0x7f0800ce
-int id etPhone 0x7f0800cf
 int id etSleepHour 0x7f0800d0
 int id etSleepMinute 0x7f0800d1
 int id etWakeHour 0x7f0800d2
@@ -3860,8 +3858,6 @@ int layout design_navigation_menu 0x7f0b0032
 int layout design_navigation_menu_item 0x7f0b0033
 int layout design_text_input_end_icon 0x7f0b0034
 int layout design_text_input_start_icon 0x7f0b0035
-int layout fragment_email_login 0x7f0b0036
-int layout fragment_phone_login 0x7f0b0037
 int layout home_dialog_water_amount 0x7f0b0038
 int layout home_dialog_water_tips 0x7f0b0039
 int layout home_item_water_history 0x7f0b003a

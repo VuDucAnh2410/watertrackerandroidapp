@@ -3349,13 +3349,11 @@ id etAccount
 id etAge
 id etConfirmPassword
 id etCustomAmount
-id etEmail
 id etFullName
 id etHeight
 id etInput
 id etNewPassword
 id etPassword
-id etPhone
 id etSleepHour
 id etSleepMinute
 id etWakeHour
@@ -3861,8 +3859,6 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
-layout fragment_email_login
-layout fragment_phone_login
 layout home_dialog_water_amount
 layout home_dialog_water_tips
 layout home_item_water_history
