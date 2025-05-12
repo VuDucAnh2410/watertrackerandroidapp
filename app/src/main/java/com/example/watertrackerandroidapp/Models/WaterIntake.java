@@ -7,7 +7,7 @@ public class WaterIntake {
     private String drinkType;
     private String intakeTime;
     private String intakeDate;
-    private boolean isScheduled; // Để phân biệt giữa lịch uống nước và đã uống
+    private boolean isScheduled;
 
     public WaterIntake() {
     }
@@ -78,4 +78,3 @@ public class WaterIntake {
         isScheduled = scheduled;
     }
 }
-

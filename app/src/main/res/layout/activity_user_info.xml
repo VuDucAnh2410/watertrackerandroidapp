@@ -7,13 +7,10 @@
     android:fillViewport="true">
 
     <LinearLayout
-        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="24dp">
-
-        <!-- Tên -->
 
         <TextView
             android:layout_width="match_parent"
@@ -29,7 +26,9 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="16dp"
+            app:boxStrokeColor="@color/lightBlue"
+            app:boxBackgroundMode="outline">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etFullName"
@@ -38,18 +37,17 @@
                 android:background="@drawable/rounded_edittext"
                 android:hint="TÊN"
                 android:inputType="textPersonName"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 android:padding="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Giới tính -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Giới tính"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:layout_marginBottom="8dp" />
 
         <RadioGroup
@@ -80,12 +78,13 @@
                 android:text="Khác" />
         </RadioGroup>
 
-        <!-- Cân nặng -->
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            app:boxStrokeColor="@color/lightBlue"
+            app:boxBackgroundMode="outline">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etWeight"
@@ -94,16 +93,17 @@
                 android:background="@drawable/rounded_edittext"
                 android:hint="CÂN NẶNG (KG)"
                 android:inputType="numberDecimal"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 android:padding="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Chiều cao -->
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            app:boxStrokeColor="@color/lightBlue"
+            app:boxBackgroundMode="outline">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etHeight"
@@ -112,16 +112,17 @@
                 android:background="@drawable/rounded_edittext"
                 android:hint="CHIỀU CAO (M)"
                 android:inputType="numberDecimal"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 android:padding="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Tuổi -->
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            app:boxStrokeColor="@color/lightBlue"
+            app:boxBackgroundMode="outline">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etAge"
@@ -130,17 +131,16 @@
                 android:background="@drawable/rounded_edittext"
                 android:hint="TUỔI"
                 android:inputType="number"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 android:padding="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Thời gian ngủ -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Thời gian ngủ"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginBottom="8dp" />
 
@@ -159,7 +159,8 @@
                 android:inputType="number"
                 android:maxLength="2"
                 android:textAlignment="center"
-                android:background="@drawable/rounded_edittext" />
+                android:background="@drawable/rounded_edittext"
+                android:textSize="15sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -177,16 +178,16 @@
                 android:inputType="number"
                 android:maxLength="2"
                 android:textAlignment="center"
-                android:background="@drawable/rounded_edittext" />
+                android:background="@drawable/rounded_edittext"
+                android:textSize="15sp" />
         </LinearLayout>
 
-        <!-- Thời gian thức dậy -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Thời gian thức dậy"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginBottom="8dp" />
 
@@ -205,7 +206,8 @@
                 android:inputType="number"
                 android:maxLength="2"
                 android:textAlignment="center"
-                android:background="@drawable/rounded_edittext" />
+                android:background="@drawable/rounded_edittext"
+                android:textSize="15sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -223,7 +225,8 @@
                 android:inputType="number"
                 android:maxLength="2"
                 android:textAlignment="center"
-                android:background="@drawable/rounded_edittext" />
+                android:background="@drawable/rounded_edittext"
+                android:textSize="15sp" />
         </LinearLayout>
 
         <Button

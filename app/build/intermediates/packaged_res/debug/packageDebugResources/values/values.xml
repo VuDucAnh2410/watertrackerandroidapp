@@ -21,13 +21,20 @@
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#FFEB3B</color>
     <string name="app_name">Water Tracker</string>
+    <string name="firebase_database_url" translatable="false">https://ducandb-project-default-rtdb.asia-southeast1.firebasedatabase.app</string>
     <string name="forgot_password">Quên mật khẩu?</string>
+    <string name="gcm_defaultSenderId" translatable="false">28339341209</string>
+    <string name="google_api_key" translatable="false">AIzaSyBX9EDm3RD4AtZZYn6EwYCH-r9qLNPjLkY</string>
+    <string name="google_app_id" translatable="false">1:28339341209:android:8c5a800d8591b589ccf508</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBX9EDm3RD4AtZZYn6EwYCH-r9qLNPjLkY</string>
+    <string name="google_storage_bucket" translatable="false">ducandb-project.firebasestorage.app</string>
     <string name="had_account">Đã có tài khoản? Đăng nhập</string>
     <string name="hint_email">Nhập email</string>
     <string name="hint_password">Nhập mật khẩu</string>
     <string name="hint_phone">Nhập số điện thoại</string>
     <string name="login_title">Đăng nhập</string>
     <string name="no_account">Chưa có tài khoản? Đăng ký</string>
+    <string name="project_id" translatable="false">ducandb-project</string>
     <string name="register">Đăng ký</string>
     <string name="tab_email">Email</string>
     <string name="tab_phone">Số điện thoại</string>
