@@ -1,274 +1,338 @@
 [
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_activity_register.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/layout/activity_register.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_profile_activity.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\profile_activity.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_ic_settings.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/ic_settings.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_ic_water_drop.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\ic_water_drop.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_ic_lightbulb.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/ic_lightbulb.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_circle_selected_day_background.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\circle_selected_day_background.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_profile_edit_activity.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/layout/profile_edit_activity.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_home_item_water_history.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\home_item_water_history.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_activity_main.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/layout/activity_main.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_ic_profile.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\ic_profile.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_ic_back.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/ic_back.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_ic_stats.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/ic_stats.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_ic_search.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\ic_search.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_stats_activity_statistics.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\stats_activity_statistics.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_ic_water_drop.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/ic_water_drop.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_activity_reset_password.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\activity_reset_password.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_ic_edit.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/ic_edit.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\raw_classic.wav.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\raw\\classic.wav"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_ic_profile.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/ic_profile.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_activity_user_info.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\activity_user_info.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_ic_water_cup.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\ic_water_cup.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_home_dialog_water_tips.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/layout/home_dialog_water_tips.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_bg_selected_month.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\bg_selected_month.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_setting_schedule_item.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/layout/setting_schedule_item.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_bg_edit_text.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\bg_edit_text.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_setting_schedule_dialog_time_picker.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/layout/setting_schedule_dialog_time_picker.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_ic_delete_bin.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\ic_delete_bin.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_default_avatar.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/default_avatar.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_setting_sound_item.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/layout/setting_sound_item.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\raw_water_pouring.wav.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\raw\\water_pouring.wav"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_activity_user_info.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/layout/activity_user_info.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_activity_forgot_password.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\activity_forgot_password.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_stats_item_month.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\stats_item_month.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_wter_removebg_preview.png.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/wter_removebg_preview.png"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_speech_bubble.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\speech_bubble.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_setting_schedule_item.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\setting_schedule_item.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_setting_schedule_dialog_time_picker.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\setting_schedule_dialog_time_picker.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_ic_input_add.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\ic_input_add.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_ic_input_add.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/ic_input_add.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_setting.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\setting.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/raw_water_pouring.wav.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/raw/water_pouring.wav"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_activity_reset_password.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/layout/activity_reset_password.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_rounded_edittext.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\rounded_edittext.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_bg_gradient.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/bg_gradient.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_setting_dialog_adjust_goal.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\setting_dialog_adjust_goal.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_activity_login.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/layout/activity_login.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_profile_edit_activity.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\profile_edit_activity.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_ic_home.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/ic_home.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_setting_schedule.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\setting_schedule.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_ic_arrow_back.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/ic_arrow_back.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_button_otp_background.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\button_otp_background.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_ic_alarm.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/ic_alarm.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_circle_day_background.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\circle_day_background.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_home_dialog_water_amount.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\home_dialog_water_amount.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/xml_data_extraction_rules.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/xml/data_extraction_rules.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_rounded_button_background.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\rounded_button_background.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_setting_dialog_adjust_goal.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/layout/setting_dialog_adjust_goal.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_logoo.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\logoo.png"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_activity_reset_success.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/layout/activity_reset_success.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_button_otp_background.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/button_otp_background.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_circle_background.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\circle_background.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/raw_nature.wav.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/raw/nature.wav"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_stats_dialog_year_picker.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\stats_dialog_year_picker.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_input_field_background.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/input_field_background.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_ic_arrow_back.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\ic_arrow_back.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\raw_water_drop.wav.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\raw\\water_drop.wav"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/xml_backup_rules.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/xml/backup_rules.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_ic_stats.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\ic_stats.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_logoo.png.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/logoo.png"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_ic_edit.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\ic_edit.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_ic_water_cup.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/ic_water_cup.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_ic_home.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\ic_home.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_logo.png.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/logo.png"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_logoo_removebg_preview.png.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/logoo_removebg_preview.png"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_rounded_dialog_background.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\rounded_dialog_background.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_ic_refresh.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/ic_refresh.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_activity_password_registration.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/layout/activity_password_registration.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_ic_lightbulb.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\ic_lightbulb.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_rounded_dialog_background.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/rounded_dialog_background.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_setting_sound_item.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\setting_sound_item.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_setting.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/layout/setting.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_ic_next.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\ic_next.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_activity_forgot_password.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/layout/activity_forgot_password.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_stats_dialog_day_details.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\stats_dialog_day_details.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_bg_edit_text.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/bg_edit_text.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\raw_nature.wav.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\raw\\nature.wav"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_home_dialog_water_amount.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/layout/home_dialog_water_amount.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_home_dialog_water_tips.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\home_dialog_water_tips.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/raw_classic.wav.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/raw/classic.wav"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_ic_success_check.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\ic_success_check.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_setting_sound.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/layout/setting_sound.xml"
+        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_stats_dialog_month_picker.xml.flat",
+        "source": "com.example.watertrackerandroidapp-main-46:/layout/stats_dialog_month_picker.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_circle_background.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/circle_background.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\activity_login.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_setting_schedule.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/layout/setting_schedule.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_speech_bubble.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/speech_bubble.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_stats_dialog_month_picker.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\stats_dialog_month_picker.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_ic_delete_bin.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/ic_delete_bin.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_water_drop_mascot.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\water_drop_mascot.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_ic_settings.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\ic_settings.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_home_item_water_history.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/layout/home_item_water_history.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_bg_gradient.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\bg_gradient.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_rounded_edittext.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/rounded_edittext.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_wter_removebg_preview.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\wter_removebg_preview.png"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_profile_activity.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/layout/profile_activity.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_ic_success_check.xml.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/drawable/ic_success_check.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_ic_dropdown.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\ic_dropdown.xml"
     },
     {
-        "merged": "com.example.watertrackerandroidapp-debug-44:/raw_water_drop.wav.flat",
-        "source": "com.example.watertrackerandroidapp-main-46:/raw/water_drop.wav"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_logoo_removebg_preview.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\logoo_removebg_preview.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_setting_sound.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\setting_sound.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_stats_activity_statistics_new.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\stats_activity_statistics_new.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_activity_reset_success.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\activity_reset_success.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_stats_item_calendar_day.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\stats_item_calendar_day.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_logo.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\logo.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_input_field_background.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\input_field_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_ic_refresh.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\ic_refresh.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_ic_alarm.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\ic_alarm.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_default_avatar.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\default_avatar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\layout_activity_password_registration.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\layout\\activity_password_registration.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-debug-44:\\drawable_ic_back.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.10.2\\com.example.watertrackerandroidapp-main-46:\\drawable\\ic_back.xml"
     }
 ]

@@ -81,6 +81,8 @@ dependencies {
 
     implementation("de.hdodenhof:circleimageview:3.1.0")
 
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+
     // Uncomment if needed for phone authentication
     // implementation("com.google.android.gms:play-services-auth:20.7.0")
     // implementation("com.google.android:flexbox:2.0.1")

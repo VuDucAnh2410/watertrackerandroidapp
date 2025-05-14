@@ -67,7 +67,7 @@
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/ic_back"/>
+                    android:src="@drawable/ic_next"/>
             </LinearLayout>
 
             <View
@@ -96,7 +96,7 @@
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/ic_back"/>
+                    android:src="@drawable/ic_next"/>
             </LinearLayout>
 
             <View
@@ -173,7 +173,9 @@
                 android:layout_height="1dp"
                 android:background="@android:color/darker_gray"/>
         </LinearLayout>
+
     </ScrollView>
+
 
     <!-- Bottom Navigation -->
     <LinearLayout

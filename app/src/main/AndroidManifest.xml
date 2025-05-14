@@ -62,6 +62,9 @@
         <activity
         android:name=".SettingFunction.Activity.ScheduleActivity"
         android:exported="false" />
+        <activity
+            android:name=".StatisticsFunction.StatisticsActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

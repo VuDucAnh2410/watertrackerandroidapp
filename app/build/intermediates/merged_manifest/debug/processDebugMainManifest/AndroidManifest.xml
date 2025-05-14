@@ -83,6 +83,9 @@
             android:name="com.example.watertrackerandroidapp.SettingFunction.Activity.ScheduleActivity"
             android:exported="false" />
         <activity
+            android:name="com.example.watertrackerandroidapp.StatisticsFunction.StatisticsActivity"
+            android:exported="false" />
+        <activity
             android:name="com.google.firebase.auth.internal.GenericIdpActivity"
             android:excludeFromRecents="true"
             android:exported="true"

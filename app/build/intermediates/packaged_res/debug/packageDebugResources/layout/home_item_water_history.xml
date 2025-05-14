@@ -7,16 +7,14 @@
     android:gravity="center_vertical"
     android:padding="8dp">
 
-    <!-- Icon based on type (alarm or water) -->
     <ImageView
         android:id="@+id/ivIcon"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:src="@drawable/ic_water_drop"
+        android:src="@drawable/wter_removebg_preview"
         android:contentDescription="Water intake"
         app:tint="@color/lightBlue" />
 
-    <!-- Time -->
     <TextView
         android:id="@+id/tvTime"
         android:layout_width="0dp"
@@ -27,7 +25,15 @@
         android:textSize="16sp"
         android:layout_marginStart="16dp" />
 
-    <!-- Amount -->
+    <TextView
+        android:id="@+id/tvDrinkType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Nước lọc"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
     <TextView
         android:id="@+id/tvAmount"
         android:layout_width="wrap_content"
@@ -37,4 +43,3 @@
         android:textSize="16sp"
         android:textStyle="bold" />
 </LinearLayout>
-
