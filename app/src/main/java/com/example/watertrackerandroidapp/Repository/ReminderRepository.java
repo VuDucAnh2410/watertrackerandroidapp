@@ -17,6 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -165,41 +166,59 @@ public class ReminderRepository {
 
     public void createDefaultReminders(String userId, String wakeTime, String sleepTime) {
         try {
+            // Phân tích wakeTime và sleepTime
             String[] wakeParts = wakeTime.split(":");
             String[] sleepParts = sleepTime.split(":");
 
-
             int wakeHour = Integer.parseInt(wakeParts[0]);
+            int wakeMinute = Integer.parseInt(wakeParts[1]);
             int sleepHour = Integer.parseInt(sleepParts[0]);
+            int sleepMinute = Integer.parseInt(sleepParts[1]);
 
+            // Tính thời gian bắt đầu (1 giờ sau wakeTime)
+            Calendar startTime = Calendar.getInstance();
+            startTime.set(Calendar.HOUR_OF_DAY, wakeHour);
+            startTime.set(Calendar.MINUTE, wakeMinute);
+            startTime.add(Calendar.HOUR_OF_DAY, 1); // +1 giờ
 
+            // Tính thời gian kết thúc (1 giờ trước sleepTime)
+            Calendar endTime = Calendar.getInstance();
+            endTime.set(Calendar.HOUR_OF_DAY, sleepHour);
+            endTime.set(Calendar.MINUTE, sleepMinute);
+            endTime.add(Calendar.HOUR_OF_DAY, -1); // -1 giờ
+
+            // Chuẩn bị danh sách reminders
             Map<String, Object> reminders = new HashMap<>();
-            int currentHour = wakeHour;
             int count = 0;
 
+            // Tạo reminders cách nhau 1 tiếng
+            Calendar currentTime = (Calendar) startTime.clone();
+            while (currentTime.getTimeInMillis() <= endTime.getTimeInMillis()) {
+                int hour = currentTime.get(Calendar.HOUR_OF_DAY);
+                int minute = currentTime.get(Calendar.MINUTE);
+                String time = String.format("%02d:%02d", hour, minute);
 
-            while (currentHour != sleepHour) {
-                String time = String.format("%02d:00", currentHour);
                 Map<String, Object> reminder = new HashMap<>();
                 reminder.put("reminderId", "REMINDER" + System.currentTimeMillis() + count);
+                reminder.put("userId", userId);
                 reminder.put("time", time);
                 reminder.put("active", true);
                 reminder.put("sound", "water_pouring");
                 reminder.put("days", "Everyday");
 
-
                 reminders.put("reminder_" + count, reminder);
                 count++;
 
-
-                currentHour = (currentHour + 1) % 24;
+                // Tăng 1 giờ
+                currentTime.add(Calendar.HOUR_OF_DAY, 1);
             }
 
-
+            // Lưu vào Firebase
+            int currentCount = count;
             mDatabase.child("reminders").child(userId).setValue(reminders)
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
-                            Log.d(TAG, "Default reminders created successfully");
+                            Log.d(TAG, "Default reminders created successfully: " + currentCount + " reminders");
                         } else {
                             Log.e(TAG, "Error creating default reminders", task.getException());
                         }

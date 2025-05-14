@@ -49,7 +49,7 @@ public class SoundSelectionActivity extends AppCompatActivity {
 
 
         // Tạo danh sách âm thanh
-        soundList.add(new SoundItem("Đóng nước", "water_pouring"));
+        soundList.add(new SoundItem("Dòng nước", "water_pouring"));
         soundList.add(new SoundItem("Cổ điển", "classic"));
         soundList.add(new SoundItem("Giọt nước", "water_drop"));
         soundList.add(new SoundItem("Thiên nhiên", "nature"));
