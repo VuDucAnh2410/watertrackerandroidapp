@@ -6,7 +6,18 @@
 
     <uses-sdk
         android:minSdkVersion="24"
-        android:targetSdkVersion="35" />
+        android:targetSdkVersion="34" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" />
+    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <permission
         android:name="com.example.watertrackerandroidapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
@@ -15,6 +26,7 @@
     <uses-permission android:name="com.example.watertrackerandroidapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
+        android:name="com.example.watertrackerandroidapp.WaterTrackerApplication"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
@@ -26,7 +38,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.WaterTrackerAndroidApp" >
         <activity
-            android:name="com.example.watertrackerandroidapp.SettingFunction.SettingActivity"
+            android:name="com.example.watertrackerandroidapp.LoginFunction.LoginActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,44 +47,166 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.watertrackerandroidapp.SettingFunction.Activity.SoundSelectionActivity"
+            android:name="com.example.watertrackerandroidapp.HomeFunction.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.watertrackerandroidapp.LoginFunction.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.watertrackerandroidapp.LoginFunction.PasswordRegistrationActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.watertrackerandroidapp.LoginFunction.ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.watertrackerandroidapp.LoginFunction.ResetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.watertrackerandroidapp.LoginFunction.ResetSuccessActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.watertrackerandroidapp.LoginFunction.UserInfoActivity"
+            android:exported="false" />
+
+        <!-- SETTING -->
+        <activity
+            android:name="com.example.watertrackerandroidapp.SettingFunction.SettingActivity"
             android:exported="false" />
         <activity
             android:name="com.example.watertrackerandroidapp.SettingFunction.Activity.ScheduleActivity"
             android:exported="false" />
+        <activity
+            android:name="com.example.watertrackerandroidapp.SettingFunction.Activity.SoundSelectionActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
 
-        <!-- <activity -->
-        <!-- android:name=".HomeFunction.MainActivity" -->
-        <!-- android:exported="false" /> -->
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
 
+                <data
+                    android:host="firebase.auth"
+                    android:path="/"
+                    android:scheme="genericidp" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
 
-        <!-- <activity -->
-        <!-- android:name=".LoginFunction.RegisterActivity" -->
-        <!-- android:exported="false" /> -->
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
 
+                <data
+                    android:host="firebase.auth"
+                    android:path="/"
+                    android:scheme="recaptcha" />
+            </intent-filter>
+        </activity>
 
-        <!-- <activity -->
-        <!-- android:name=".LoginFunction.PasswordRegistrationActivity" -->
-        <!-- android:exported="false" /> -->
+        <service
+            android:name="com.google.firebase.components.ComponentDiscoveryService"
+            android:directBootAware="true"
+            android:exported="false" >
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.database.FirebaseDatabaseKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.functions.FirebaseFunctionsKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.functions.FunctionsRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+        </service>
 
+        <receiver
+            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+            android:enabled="true"
+            android:exported="false" >
+        </receiver>
 
-        <!-- <activity -->
-        <!-- android:name=".LoginFunction.ForgotPasswordActivity" -->
-        <!-- android:exported="false" /> -->
-        <!-- <activity -->
-        <!-- android:name=".LoginFunction.VerifyOTPActivity" -->
-        <!-- android:exported="false" /> -->
-        <!-- <activity -->
-        <!-- android:name=".LoginFunction.ResetPasswordActivity" -->
-        <!-- android:exported="false" /> -->
-        <!-- <activity -->
-        <!-- android:name=".LoginFunction.ResetSuccessActivity" -->
-        <!-- android:exported="false" /> -->
-        <!-- <activity -->
-        <!-- android:name=".LoginFunction.UserInfoActivity" -->
-        <!-- android:exported="false" /> -->
-        <!-- &lt;!&ndash; Nếu bạn có các Fragment, không cần khai báo chúng ở đây &ndash;&gt; -->
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
+            android:enabled="true"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY"
+                android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl" />
+        </service>
 
+        <activity
+            android:name="androidx.credentials.playservices.HiddenActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:enabled="true"
+            android:exported="false"
+            android:fitsSystemWindows="true"
+            android:theme="@style/Theme.Hidden" >
+        </activity>
+        <activity
+            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!--
+            Service handling Google Sign-In user revocation. For apps that do not integrate with
+            Google Sign-In, this service will never be started.
+        -->
+        <service
+            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+            android:exported="true"
+            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+            android:visibleToInstantApps="true" />
+
+        <provider
+            android:name="com.google.firebase.provider.FirebaseInitProvider"
+            android:authorities="com.example.watertrackerandroidapp.firebaseinitprovider"
+            android:directBootAware="true"
+            android:exported="false"
+            android:initOrder="100" />
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.example.watertrackerandroidapp.androidx-startup"
@@ -89,11 +223,17 @@
         </provider>
 
         <uses-library
-            android:name="androidx.window.extensions"
+            android:name="android.ext.adservices"
             android:required="false" />
-        <uses-library
-            android:name="androidx.window.sidecar"
-            android:required="false" />
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
         <receiver
             android:name="androidx.profileinstaller.ProfileInstallReceiver"
@@ -113,7 +253,12 @@
             <intent-filter>
                 <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
             </intent-filter>
-        </receiver>
+        </receiver> <!-- The activities will be merged into the manifest of the hosting app. -->
+        <activity
+            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+            android:exported="false"
+            android:stateNotNeeded="true"
+            android:theme="@style/Theme.PlayCore.Transparent" />
     </application>
 
 </manifest>

@@ -15,6 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.watertrackerandroidapp.R;
 import com.example.watertrackerandroidapp.SettingFunction.Item.SoundItem;
+import com.example.watertrackerandroidapp.Repository.ReminderRepository;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +25,7 @@ public class SoundSelectionActivity extends AppCompatActivity {
 
     private ListView listViewSounds;
     private SoundAdapter soundAdapter;
+    private ReminderRepository reminderRepository;
     private List<SoundItem> soundList = new ArrayList<>();
     private int selectedPosition = -1;
     private MediaPlayer mediaPlayer;
@@ -31,6 +34,8 @@ public class SoundSelectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.setting_sound);
+        // Khởi tạo ReminderRepository
+        reminderRepository = new ReminderRepository();
 
         // Khởi tạo ListView
         listViewSounds = findViewById(R.id.listViewSounds);
@@ -124,6 +129,22 @@ public class SoundSelectionActivity extends AppCompatActivity {
                     // Lưu âm thanh được chọn vào SharedPreferences
                     SharedPreferences sharedPref = getSharedPreferences("WaterPrefs", MODE_PRIVATE);
                     sharedPref.edit().putString("reminderSound", item.getSoundId()).apply();
+
+                    // Cập nhật âm thanh trên Firebase
+                    String userId = FirebaseAuth.getInstance().getCurrentUser() != null
+                            ? FirebaseAuth.getInstance().getCurrentUser().getUid()
+                            : null;
+                    if (userId != null) {
+                        reminderRepository.updateAllRemindersSound(userId, item.getSoundId(), task -> {
+                            if (task.isSuccessful()) {
+                                Log.d("SoundSelectionActivity", "Sound updated successfully on Firebase");
+                            } else {
+                                Log.e("SoundSelectionActivity", "Error updating sound on Firebase", task.getException());
+                            }
+                        });
+                    } else {
+                        Log.e("SoundSelectionActivity", "User not logged in");
+                    }
 
                     // Dừng và giải phóng âm thanh hiện tại nếu đang phát
                     if (mediaPlayer != null) {

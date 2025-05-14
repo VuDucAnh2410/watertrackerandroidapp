@@ -1,56 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application
+        android:name=".WaterTrackerApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WaterTrackerAndroidApp">
+
         <activity
-            android:name=".SettingFunction.SettingActivity"
+            android:name=".LoginFunction.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".SettingFunction.Activity.SoundSelectionActivity"
+            android:name=".HomeFunction.MainActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".LoginFunction.RegisterActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".LoginFunction.PasswordRegistrationActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".LoginFunction.ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginFunction.ResetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginFunction.ResetSuccessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginFunction.UserInfoActivity"
+            android:exported="false" />
+
+        <!-- SETTING-->
+        <activity
+            android:name=".SettingFunction.SettingActivity"
+            android:exported="false"/>
         <activity
             android:name=".SettingFunction.Activity.ScheduleActivity"
-            android:exported="false" />
-
-<!--        <activity-->
-<!--            android:name=".HomeFunction.MainActivity"-->
-<!--            android:exported="false" />-->
-
-<!--        <activity-->
-<!--            android:name=".LoginFunction.RegisterActivity"-->
-<!--            android:exported="false" />-->
-
-<!--        <activity-->
-<!--            android:name=".LoginFunction.PasswordRegistrationActivity"-->
-<!--            android:exported="false" />-->
-
-<!--        <activity-->
-<!--            android:name=".LoginFunction.ForgotPasswordActivity"-->
-<!--            android:exported="false" />-->
-<!--        <activity-->
-<!--            android:name=".LoginFunction.VerifyOTPActivity"-->
-<!--            android:exported="false" />-->
-<!--        <activity-->
-<!--            android:name=".LoginFunction.ResetPasswordActivity"-->
-<!--            android:exported="false" />-->
-<!--        <activity-->
-<!--            android:name=".LoginFunction.ResetSuccessActivity"-->
-<!--            android:exported="false" />-->
-<!--        <activity-->
-<!--            android:name=".LoginFunction.UserInfoActivity"-->
-<!--            android:exported="false" />-->
-<!--        &lt;!&ndash; Nếu bạn có các Fragment, không cần khai báo chúng ở đây &ndash;&gt;-->
+            android:exported="false"/>
+        <activity
+            android:name=".SettingFunction.Activity.SoundSelectionActivity"
+            android:exported="false"/>
 
     </application>
 
 </manifest>
+    

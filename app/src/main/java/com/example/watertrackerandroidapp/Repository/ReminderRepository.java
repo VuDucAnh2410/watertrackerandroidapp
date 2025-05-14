@@ -115,6 +115,30 @@ public class ReminderRepository {
                     }
                 });
     }
+    public void deleteAllReminders(String userId, OnCompleteListener<Void> listener) {
+        mDatabase.child("reminders").child(userId).removeValue().addOnCompleteListener(listener);
+    }
+
+    public void updateAllRemindersSound(String userId, String sound, OnCompleteListener<Void> listener) {
+        mDatabase.child("reminders").child(userId)
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        Map<String, Object> updates = new HashMap<>();
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            String key = snapshot.getKey();
+                            updates.put(key + "/sound", sound);
+                        }
+                        mDatabase.child("reminders").child(userId).updateChildren(updates)
+                                .addOnCompleteListener(listener);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Log.e(TAG, "Error updating reminders sound", databaseError.toException());
+                    }
+                });
+    }
 
     public void createDefaultReminders(String userId, String wakeTime, String sleepTime) {
         try {
@@ -134,7 +158,7 @@ public class ReminderRepository {
                 reminder.put("reminderId", "REMINDER" + System.currentTimeMillis() + count);
                 reminder.put("time", time);
                 reminder.put("active", true);
-                reminder.put("sound", "default");
+                reminder.put("sound", "water_pouring");
                 reminder.put("days", "Everyday");
 
                 reminders.put("reminder_" + count, reminder);
