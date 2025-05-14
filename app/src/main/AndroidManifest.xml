@@ -53,6 +53,15 @@
         <activity
             android:name=".ProfileFunction.EditProfileActivity"
             android:exported="false" />
+        <activity
+            android:name=".SettingFunction.SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SettingFunction.Activity.SoundSelectionActivity"
+            android:exported="false" />
+        <activity
+        android:name=".SettingFunction.Activity.ScheduleActivity"
+        android:exported="false" />
     </application>
 
 </manifest>

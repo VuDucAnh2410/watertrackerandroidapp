@@ -77,6 +77,8 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array unit_options
+array unit_values
 attr SharedValue
 attr SharedValueId
 attr actionBarDivider
@@ -3051,8 +3053,10 @@ drawable ic_arrow_back_black_24
 drawable ic_back
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
+drawable ic_delete_bin
 drawable ic_edit
 drawable ic_home
+drawable ic_input_add
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -3287,6 +3291,7 @@ id center_vertical
 id chain
 id chain2
 id chains
+id checkBox
 id checkbox
 id checked
 id chronometer
@@ -3375,6 +3380,7 @@ id etWeight
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fabAdd
 id fade
 id fill
 id fill_horizontal
@@ -3443,6 +3449,7 @@ id line1
 id line3
 id linear
 id listMode
+id listViewSounds
 id list_item
 id m3_side_sheet
 id mainContent
@@ -3585,6 +3592,7 @@ id right_side
 id rounded
 id row_index_key
 id rvHistory
+id rvReminder
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3605,6 +3613,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id seekBarGoal
 id select_dialog_listview
 id selected
 id selection_type
@@ -3647,6 +3656,7 @@ id submenuarrow
 id submit_area
 id supportScrollUp
 id swipeRefreshLayout
+id switchReminder
 id tabLayout
 id tabMode
 id tag_accessibility_actions
@@ -3679,6 +3689,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id timePicker
 id title
 id titleDividerNoCustom
 id title_template
@@ -3699,6 +3710,7 @@ id tvAmount
 id tvConnectionError
 id tvConsumed
 id tvForgotPassword
+id tvGoalValue
 id tvLogin
 id tvMessage
 id tvName
@@ -3707,10 +3719,13 @@ id tvPercentage
 id tvRegister
 id tvSelectedAmount
 id tvSleepTime
+id tvSoundName
 id tvTarget
 id tvTime
+id tvTitle
 id tvValidationMessage
 id tvWakeTime
+id tvWaterGoal
 id tvWeight
 id unchecked
 id uniform
@@ -3944,11 +3959,22 @@ layout profile_edit_activity
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout setting
+layout setting_dialog_adjust_goal
+layout setting_schedule
+layout setting_schedule_dialog_time_picker
+layout setting_schedule_item
+layout setting_sound
+layout setting_sound_item
 layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
+raw classic
 raw firebase_common_keep
+raw nature
+raw water_drop
+raw water_pouring
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

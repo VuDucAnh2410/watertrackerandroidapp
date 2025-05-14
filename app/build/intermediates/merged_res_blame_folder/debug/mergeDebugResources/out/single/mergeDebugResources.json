@@ -52,12 +52,24 @@
         "source": "com.example.watertrackerandroidapp-main-46:/layout/home_dialog_water_tips.xml"
     },
     {
+        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_setting_schedule_item.xml.flat",
+        "source": "com.example.watertrackerandroidapp-main-46:/layout/setting_schedule_item.xml"
+    },
+    {
+        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_setting_schedule_dialog_time_picker.xml.flat",
+        "source": "com.example.watertrackerandroidapp-main-46:/layout/setting_schedule_dialog_time_picker.xml"
+    },
+    {
         "merged": "com.example.watertrackerandroidapp-debug-44:/mipmap-xhdpi_ic_launcher.webp.flat",
         "source": "com.example.watertrackerandroidapp-main-46:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
         "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_default_avatar.xml.flat",
         "source": "com.example.watertrackerandroidapp-main-46:/drawable/default_avatar.xml"
+    },
+    {
+        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_setting_sound_item.xml.flat",
+        "source": "com.example.watertrackerandroidapp-main-46:/layout/setting_sound_item.xml"
     },
     {
         "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_ic_launcher_background.xml.flat",
@@ -86,6 +98,14 @@
     {
         "merged": "com.example.watertrackerandroidapp-debug-44:/mipmap-xhdpi_ic_launcher_round.webp.flat",
         "source": "com.example.watertrackerandroidapp-main-46:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_ic_input_add.xml.flat",
+        "source": "com.example.watertrackerandroidapp-main-46:/drawable/ic_input_add.xml"
+    },
+    {
+        "merged": "com.example.watertrackerandroidapp-debug-44:/raw_water_pouring.wav.flat",
+        "source": "com.example.watertrackerandroidapp-main-46:/raw/water_pouring.wav"
     },
     {
         "merged": "com.example.watertrackerandroidapp-debug-44:/layout_activity_reset_password.xml.flat",
@@ -128,12 +148,20 @@
         "source": "com.example.watertrackerandroidapp-main-46:/xml/data_extraction_rules.xml"
     },
     {
+        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_setting_dialog_adjust_goal.xml.flat",
+        "source": "com.example.watertrackerandroidapp-main-46:/layout/setting_dialog_adjust_goal.xml"
+    },
+    {
         "merged": "com.example.watertrackerandroidapp-debug-44:/layout_activity_reset_success.xml.flat",
         "source": "com.example.watertrackerandroidapp-main-46:/layout/activity_reset_success.xml"
     },
     {
         "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_button_otp_background.xml.flat",
         "source": "com.example.watertrackerandroidapp-main-46:/drawable/button_otp_background.xml"
+    },
+    {
+        "merged": "com.example.watertrackerandroidapp-debug-44:/raw_nature.wav.flat",
+        "source": "com.example.watertrackerandroidapp-main-46:/raw/nature.wav"
     },
     {
         "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_input_field_background.xml.flat",
@@ -180,6 +208,10 @@
         "source": "com.example.watertrackerandroidapp-main-46:/drawable/rounded_dialog_background.xml"
     },
     {
+        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_setting.xml.flat",
+        "source": "com.example.watertrackerandroidapp-main-46:/layout/setting.xml"
+    },
+    {
         "merged": "com.example.watertrackerandroidapp-debug-44:/layout_activity_forgot_password.xml.flat",
         "source": "com.example.watertrackerandroidapp-main-46:/layout/activity_forgot_password.xml"
     },
@@ -192,12 +224,28 @@
         "source": "com.example.watertrackerandroidapp-main-46:/layout/home_dialog_water_amount.xml"
     },
     {
+        "merged": "com.example.watertrackerandroidapp-debug-44:/raw_classic.wav.flat",
+        "source": "com.example.watertrackerandroidapp-main-46:/raw/classic.wav"
+    },
+    {
+        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_setting_sound.xml.flat",
+        "source": "com.example.watertrackerandroidapp-main-46:/layout/setting_sound.xml"
+    },
+    {
         "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_circle_background.xml.flat",
         "source": "com.example.watertrackerandroidapp-main-46:/drawable/circle_background.xml"
     },
     {
+        "merged": "com.example.watertrackerandroidapp-debug-44:/layout_setting_schedule.xml.flat",
+        "source": "com.example.watertrackerandroidapp-main-46:/layout/setting_schedule.xml"
+    },
+    {
         "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_speech_bubble.xml.flat",
         "source": "com.example.watertrackerandroidapp-main-46:/drawable/speech_bubble.xml"
+    },
+    {
+        "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_ic_delete_bin.xml.flat",
+        "source": "com.example.watertrackerandroidapp-main-46:/drawable/ic_delete_bin.xml"
     },
     {
         "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_ic_launcher_foreground.xml.flat",
@@ -218,5 +266,9 @@
     {
         "merged": "com.example.watertrackerandroidapp-debug-44:/drawable_ic_success_check.xml.flat",
         "source": "com.example.watertrackerandroidapp-main-46:/drawable/ic_success_check.xml"
+    },
+    {
+        "merged": "com.example.watertrackerandroidapp-debug-44:/raw_water_drop.wav.flat",
+        "source": "com.example.watertrackerandroidapp-main-46:/raw/water_drop.wav"
     }
 ]

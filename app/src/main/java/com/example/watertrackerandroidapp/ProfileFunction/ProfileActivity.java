@@ -20,7 +20,7 @@ import com.example.watertrackerandroidapp.LoginFunction.LoginActivity;
 import com.example.watertrackerandroidapp.Models.User;
 import com.example.watertrackerandroidapp.R;
 import com.example.watertrackerandroidapp.Repository.UserRepository;
-import com.example.watertrackerandroidapp.SettingFunction.SettingFragment;
+import com.example.watertrackerandroidapp.SettingFunction.SettingActivity;
 import com.example.watertrackerandroidapp.StatisticsFunction.StatisticsActivity;
 import com.example.watertrackerandroidapp.firebase.FirebaseManager;
 import com.google.firebase.auth.FirebaseAuth;
@@ -152,7 +152,7 @@ public class ProfileActivity extends AppCompatActivity {
             });
 
             navSettings.setOnClickListener(v -> {
-                Intent intent = new Intent(ProfileActivity.this, SettingFragment.class);
+                Intent intent = new Intent(ProfileActivity.this, SettingActivity.class);
                 startActivity(intent);
                 finish();
             });

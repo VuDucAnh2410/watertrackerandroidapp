@@ -1,5 +1,7 @@
 R_DEF: Internal format may change without notice
 local
+array unit_options
+array unit_values
 color black
 color colorAccent
 color colorPrimary
@@ -20,8 +22,10 @@ drawable default_avatar
 drawable ic_alarm
 drawable ic_arrow_back
 drawable ic_back
+drawable ic_delete_bin
 drawable ic_edit
 drawable ic_home
+drawable ic_input_add
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_lightbulb
@@ -52,6 +56,7 @@ id btnRegister
 id btnResetPassword
 id btnRetryConnection
 id btnSave
+id checkBox
 id connectionErrorLayout
 id divider
 id etAccount
@@ -69,6 +74,7 @@ id etSleepMinute
 id etWakeHour
 id etWakeMinute
 id etWeight
+id fabAdd
 id headerLayout
 id inputLayoutAccount
 id inputLayoutConfirmPassword
@@ -79,6 +85,7 @@ id ivAvatar
 id ivBack
 id ivIcon
 id ivTips
+id listViewSounds
 id mainContent
 id navHome
 id navProfile
@@ -94,13 +101,18 @@ id rbMale
 id rbOther
 id rgGender
 id rvHistory
+id rvReminder
+id seekBarGoal
 id swipeRefreshLayout
+id switchReminder
 id tabLayout
+id timePicker
 id tvAge
 id tvAmount
 id tvConnectionError
 id tvConsumed
 id tvForgotPassword
+id tvGoalValue
 id tvLogin
 id tvMessage
 id tvName
@@ -109,10 +121,13 @@ id tvPercentage
 id tvRegister
 id tvSelectedAmount
 id tvSleepTime
+id tvSoundName
 id tvTarget
 id tvTime
+id tvTitle
 id tvValidationMessage
 id tvWakeTime
+id tvWaterGoal
 id tvWeight
 id waterAmountSelector
 id waterProgressView
@@ -129,8 +144,19 @@ layout home_dialog_water_tips
 layout home_item_water_history
 layout profile_activity
 layout profile_edit_activity
+layout setting
+layout setting_dialog_adjust_goal
+layout setting_schedule
+layout setting_schedule_dialog_time_picker
+layout setting_schedule_item
+layout setting_sound
+layout setting_sound_item
 mipmap ic_launcher
 mipmap ic_launcher_round
+raw classic
+raw nature
+raw water_drop
+raw water_pouring
 string app_name
 string firebase_database_url
 string forgot_password

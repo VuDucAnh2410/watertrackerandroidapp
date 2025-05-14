@@ -151,7 +151,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="16dp"
-                android:onClick="onGoalClick"
                 android:background="@android:color/white">
 
                 <TextView

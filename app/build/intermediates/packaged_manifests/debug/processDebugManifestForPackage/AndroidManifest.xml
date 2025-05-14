@@ -74,6 +74,15 @@
             android:name="com.example.watertrackerandroidapp.ProfileFunction.EditProfileActivity"
             android:exported="false" />
         <activity
+            android:name="com.example.watertrackerandroidapp.SettingFunction.SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.watertrackerandroidapp.SettingFunction.Activity.SoundSelectionActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.watertrackerandroidapp.SettingFunction.Activity.ScheduleActivity"
+            android:exported="false" />
+        <activity
             android:name="com.google.firebase.auth.internal.GenericIdpActivity"
             android:excludeFromRecents="true"
             android:exported="true"
