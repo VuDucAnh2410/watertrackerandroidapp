@@ -28,6 +28,8 @@ import com.example.watertrackerandroidapp.R;
 import com.example.watertrackerandroidapp.Repository.UserRepository;
 import com.example.watertrackerandroidapp.Repository.WaterIntakeRepository;
 import com.example.watertrackerandroidapp.SettingFunction.SettingActivity;
+import com.example.watertrackerandroidapp.StatisticsFunction.adapter.CalendarAdapter;
+import com.example.watertrackerandroidapp.StatisticsFunction.adapter.MonthAdapter;
 import com.example.watertrackerandroidapp.firebase.FirebaseManager;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.XAxis;

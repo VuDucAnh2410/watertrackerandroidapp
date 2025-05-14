@@ -1,4 +1,4 @@
-package com.example.watertrackerandroidapp.StatisticsFunction;
+package com.example.watertrackerandroidapp.StatisticsFunction.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
