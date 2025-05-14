@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\main\AndroidManifest.xml:2:1-52:12
-INJECTED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\main\AndroidManifest.xml:2:1-52:12
-INJECTED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\main\AndroidManifest.xml:2:1-52:12
-INJECTED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\main\AndroidManifest.xml:2:1-52:12
+ADDED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\main\AndroidManifest.xml:2:1-58:12
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Admin\.gradle\caches\8.10.2\transforms\7969bbbb52f2245e97b7092c35d3c531\transformed\material-1.11.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Admin\.gradle\caches\8.10.2\transforms\158168bdeb963f7f2e16380eec5a9aa4\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\Admin\.gradle\caches\8.10.2\transforms\050316902f4e136032b218279aa90922\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
@@ -72,6 +72,7 @@ MERGED from [com.google.android.gms:play-services-basement:18.5.0] C:\Users\Admi
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\Admin\.gradle\caches\8.10.2\transforms\3621f5ca5ae42ca01e08eaa9230f4faf\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.8.2] C:\Users\Admin\.gradle\caches\8.10.2\transforms\2ac52499c5ff0b9fb529f552a35f9863\transformed\activity-1.8.2\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Admin\.gradle\caches\8.10.2\transforms\04deb212efa3d498abadd3df4dab855e\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\Admin\.gradle\caches\8.10.2\transforms\30c0146ecf7889bf105a38de6bbd9b73\transformed\circleimageview-3.1.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Admin\.gradle\caches\8.10.2\transforms\b35963a3f527f549bd5ccd075fcd2cbd\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\8.10.2\transforms\2b8d5eb51a1cc9ada9210a4a281a1209\transformed\profileinstaller-1.3.0\AndroidManifest.xml:17:1-55:12
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Admin\.gradle\caches\8.10.2\transforms\d73e27127547edac68971e2fd348d56b\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
@@ -145,8 +146,8 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.4.0] C:
 	android:name
 		ADDED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\main\AndroidManifest.xml:5:22-76
 application
-ADDED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\main\AndroidManifest.xml:7:5-50:19
-INJECTED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\main\AndroidManifest.xml:7:5-50:19
+ADDED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\main\AndroidManifest.xml:7:5-56:19
+INJECTED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\main\AndroidManifest.xml:7:5-56:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Admin\.gradle\caches\8.10.2\transforms\7969bbbb52f2245e97b7092c35d3c531\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Admin\.gradle\caches\8.10.2\transforms\7969bbbb52f2245e97b7092c35d3c531\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Admin\.gradle\caches\8.10.2\transforms\158168bdeb963f7f2e16380eec5a9aa4\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -211,6 +212,8 @@ MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users
 MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\Admin\.gradle\caches\8.10.2\transforms\04e925c5d0060ab6ae6edaa8779263ab\transformed\firebase-measurement-connector-19.0.0\AndroidManifest.xml:22:5-23:19
 MERGED from [com.google.android.gms:play-services-basement:18.5.0] C:\Users\Admin\.gradle\caches\8.10.2\transforms\14b6830fa80ac7a5a2fcbe220a6bc120\transformed\play-services-basement-18.5.0\AndroidManifest.xml:20:5-24:19
 MERGED from [com.google.android.gms:play-services-basement:18.5.0] C:\Users\Admin\.gradle\caches\8.10.2\transforms\14b6830fa80ac7a5a2fcbe220a6bc120\transformed\play-services-basement-18.5.0\AndroidManifest.xml:20:5-24:19
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\Admin\.gradle\caches\8.10.2\transforms\30c0146ecf7889bf105a38de6bbd9b73\transformed\circleimageview-3.1.0\AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\Admin\.gradle\caches\8.10.2\transforms\30c0146ecf7889bf105a38de6bbd9b73\transformed\circleimageview-3.1.0\AndroidManifest.xml:9:5-20
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\8.10.2\transforms\2b8d5eb51a1cc9ada9210a4a281a1209\transformed\profileinstaller-1.3.0\AndroidManifest.xml:23:5-53:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\8.10.2\transforms\2b8d5eb51a1cc9ada9210a4a281a1209\transformed\profileinstaller-1.3.0\AndroidManifest.xml:23:5-53:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Admin\.gradle\caches\8.10.2\transforms\d73e27127547edac68971e2fd348d56b\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
@@ -295,6 +298,18 @@ ADDED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\m
 		ADDED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\main\AndroidManifest.xml:48:13-37
 	android:name
 		ADDED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\main\AndroidManifest.xml:47:13-59
+activity#com.example.watertrackerandroidapp.ProfileFunction.ProfileActivity
+ADDED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\main\AndroidManifest.xml:50:9-52:40
+	android:exported
+		ADDED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\main\AndroidManifest.xml:52:13-37
+	android:name
+		ADDED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\main\AndroidManifest.xml:51:13-60
+activity#com.example.watertrackerandroidapp.ProfileFunction.EditProfileActivity
+ADDED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\main\AndroidManifest.xml:53:9-55:40
+	android:exported
+		ADDED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\main\AndroidManifest.xml:55:13-37
+	android:name
+		ADDED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\main\AndroidManifest.xml:54:13-64
 uses-sdk
 INJECTED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Admin\AndroidStudioProjects\waterTrackerAndroidApp\app\src\main\AndroidManifest.xml
@@ -435,6 +450,8 @@ MERGED from [androidx.activity:activity:1.8.2] C:\Users\Admin\.gradle\caches\8.1
 MERGED from [androidx.activity:activity:1.8.2] C:\Users\Admin\.gradle\caches\8.10.2\transforms\2ac52499c5ff0b9fb529f552a35f9863\transformed\activity-1.8.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Admin\.gradle\caches\8.10.2\transforms\04deb212efa3d498abadd3df4dab855e\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Admin\.gradle\caches\8.10.2\transforms\04deb212efa3d498abadd3df4dab855e\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\Admin\.gradle\caches\8.10.2\transforms\30c0146ecf7889bf105a38de6bbd9b73\transformed\circleimageview-3.1.0\AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\Admin\.gradle\caches\8.10.2\transforms\30c0146ecf7889bf105a38de6bbd9b73\transformed\circleimageview-3.1.0\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Admin\.gradle\caches\8.10.2\transforms\b35963a3f527f549bd5ccd075fcd2cbd\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Admin\.gradle\caches\8.10.2\transforms\b35963a3f527f549bd5ccd075fcd2cbd\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\8.10.2\transforms\2b8d5eb51a1cc9ada9210a4a281a1209\transformed\profileinstaller-1.3.0\AndroidManifest.xml:21:5-44

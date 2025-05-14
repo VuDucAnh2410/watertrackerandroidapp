@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.watertrackerandroidapp-mergeDebugResources-41:/values-ne/values-ne.xml",
+            "outputFile": "com.example.watertrackerandroidapp-mergeDebugResources-42:/values-ne/values-ne.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Admin\\.gradle\\caches\\8.10.2\\transforms\\14b6830fa80ac7a5a2fcbe220a6bc120\\transformed\\play-services-basement-18.5.0\\res\\values-ne\\values.xml",

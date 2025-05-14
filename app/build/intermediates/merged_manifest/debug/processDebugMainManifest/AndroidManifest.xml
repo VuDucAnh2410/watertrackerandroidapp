@@ -68,6 +68,12 @@
             android:exported="false" />
         <!-- Nếu bạn có các Fragment, không cần khai báo chúng ở đây -->
         <activity
+            android:name="com.example.watertrackerandroidapp.ProfileFunction.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.watertrackerandroidapp.ProfileFunction.EditProfileActivity"
+            android:exported="false" />
+        <activity
             android:name="com.google.firebase.auth.internal.GenericIdpActivity"
             android:excludeFromRecents="true"
             android:exported="true"
